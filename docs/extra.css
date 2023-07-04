@@ -21,7 +21,7 @@
 .md-sidebar__scrollwrap {
   /* 导航nav背景颜色，注意夜间模式 */
   /* background-color: #f8f8f8; */
-  border-right: 0.16em solid var(--md-primary-fg-color);
+  border-right: 0.16em solid var(--md-primary-bg-color--light);
 }
 /*导航集成目录左border
 .md-nav--integrated .md-nav__list .md-nav__item--active .md-nav--secondary{
