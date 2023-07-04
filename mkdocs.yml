@@ -375,5 +375,3 @@ extra_css:
 
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
-extra_css:
-  - /extra.css #我的样式
