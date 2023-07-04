@@ -8,32 +8,12 @@
   background-color: rgba(0, 0, 0, 0); /* 使用透明度值为 0 */
   color: black;
 }
-[data-md-color-primary=mywhite] {
-  /* 主题色 */
-  /* --md-primary-fg-color: #fff; */
-  --md-primary-fg-color: #fffff;
-  --md-primary-fg-color--light: #ffffffb3;
-  --md-primary-fg-color--dark: #00000012;
-  --md-primary-bg-color: #000000de;
-  --md-primary-bg-color--light: #0000008a;
-  --md-typeset-a-color: #4051b5
-}
 .md-nav .md-nav--secondary{
   /*导航集成目录左border隐藏*/
   border : 0px!important; /* 这个样式将具有最高的优先级 */
 }
-.md-sidebar__scrollwrap {
+.div.md-sidebar.md-sidebar--primary > div.md-sidebar__scrollwrap {
   /* 导航nav背景颜色，注意夜间模式 */
   /* background-color: #f8f8f8; */
   border-right: 0.16em solid var(--md-primary-fg-color--dark);
 }
-
-
-/*导航集成目录左border
-.md-nav--integrated .md-nav__list .md-nav__item--active .md-nav--secondary{
-  border-left: 1rem solid var(--md-primary-fg-color);
-	border-left: 1rem solid var(--md-primary-fg-color--light);
-}
-.md-nav.md-nav--secondary {
-  border-left : 1px solid black;
-}*/
