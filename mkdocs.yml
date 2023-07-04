@@ -4,9 +4,6 @@ site_url: https://yang-xijie.github.io
 site_author: 杨希杰
 site_description: 我的个人网站
 
-extra_css:
-  - /extra.css #我的样式
-
 # [Navigtion]
 nav:
   - 讲稿:
@@ -289,9 +286,6 @@ nav:
     - ME/suki.md
     - ME/create-family.md
     - ME/support.md
-
-extra_css:
-  - /extra.css #我的样式
 
 # [UI]
 ## [top]
