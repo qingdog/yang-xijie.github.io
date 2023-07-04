@@ -6,7 +6,7 @@ site_description: 我的个人网站
 
 extra_css:
   - /extra.css #我的样式
-  
+
 # [Navigtion]
 nav:
   - 讲稿:
@@ -290,6 +290,9 @@ nav:
     - ME/create-family.md
     - ME/support.md
 
+extra_css:
+  - /extra.css #我的样式
+
 # [UI]
 ## [top]
 theme:
@@ -344,6 +347,8 @@ extra:
       name: GitHub | Yang-Xijie
 
 # [Extensions]
+extra_css:
+  - /extra.css #我的样式
 plugins:
   - search: # 现在还不支持中文搜索 支持之后可以设置语言
     # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
