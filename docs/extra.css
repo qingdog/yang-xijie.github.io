@@ -22,7 +22,7 @@
 .md-nav--integrated .md-nav__list .md-nav__item--active .md-nav--secondary{
   /* 导航集成目录左border */
   /* border-left: 1rem solid var(--md-primary-fg-color); */
-	border-left: 1rem solid var(--md-primary-fg-color--light);
+	/* border-left: 1rem solid var(--md-primary-fg-color--light); */
 }
 .md-nav.md-nav--secondary {
   border-left : 1px solid black; /* 这里的 red 可以替换为你想要的边框颜色 */
