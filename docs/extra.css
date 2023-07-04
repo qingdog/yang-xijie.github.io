@@ -5,7 +5,7 @@
   max-width: 1440px; #设置内容区域的宽度，使每行的长度不超过 80-100 个字符，具体取决于字符的宽度。虽然这是一个合理的默认值，但由于较长的行往往更难阅读，因此可能需要增加内容区域的整体宽度，甚至使其延伸到整个可用空间。
 }
 
-[data-md-color-primary=white] {
+[data-md-color-primary=mywhite] {
   --md-primary-fg-color: #fffff;
   --md-primary-fg-color--light: #ffffffb3;
   --md-primary-fg-color--dark: #00000012;
