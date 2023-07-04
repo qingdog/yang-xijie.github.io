@@ -28,5 +28,5 @@
   border-left : 1px solid black; /* 这里的 red 可以替换为你想要的边框颜色 */
 }
 .md-header--shadow{
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0); /* 使用透明度值为 0 */
 }
