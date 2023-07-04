@@ -341,8 +341,6 @@ extra:
       name: GitHub | Yang-Xijie
 
 # [Extensions]
-extra_css:
-  - /extra.css #我的样式
 plugins:
   - search: # 现在还不支持中文搜索 支持之后可以设置语言
     # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
@@ -363,7 +361,8 @@ markdown_extensions:
   - meta # 支持Markdown文件上方自定义标题标签等
   - admonition # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks
   - pymdownx.details # admonition需要
-
+extra_css:
+  - /extra.css #我的样式
 extra_javascript:
   # latex支持
   # check https://squidfunk.github.io/mkdocs-material/reference/mathjax/?h=math for more information
@@ -376,3 +375,5 @@ extra_css:
 
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
+extra_css:
+  - /extra.css #我的样式
