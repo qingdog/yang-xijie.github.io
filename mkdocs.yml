@@ -290,7 +290,7 @@ theme:
   name: material
   palette:
     - scheme: default # 日间模式
-      primary: indigo # 上方的
+      primary: white # 原色用于标题、侧边栏、文本链接和其他几个组件。默认：indigo
       accent: orange # 链接等可交互元件的高亮色
       toggle:
         icon: material/weather-night # 图标
@@ -361,4 +361,4 @@ extra_javascript:
 extra_css:
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
-  #- /yang-xijie.github.io/extra.css #我的样式
+  - /extra.css #我的样式
