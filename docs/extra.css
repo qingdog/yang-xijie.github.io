@@ -29,4 +29,5 @@
 }
 .md-header--shadow{
   background-color: rgba(0, 0, 0, 0); /* 使用透明度值为 0 */
+  color: black;
 }
