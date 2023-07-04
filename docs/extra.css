@@ -26,6 +26,9 @@
 .md-nav.md-nav--secondary {
   border : 0px;
 }
+.md-nav__item .md-nav__item--active .md-nav__item--nested{
+	border : 0px;
+}
 /*导航集成目录左border
 .md-nav--integrated .md-nav__list .md-nav__item--active .md-nav--secondary{
   border-left: 1rem solid var(--md-primary-fg-color);
