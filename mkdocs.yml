@@ -11,6 +11,7 @@ nav:
     - mkdocs-material : https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation
     - interview-md : interview/README.md
     - interview : interview/
+    - interviewhtml : interview/index.html
     - Linux:
       - Linux讲座: LECTURE/Linux/linux.md
       - 命令行入门精简版: LECTURE/Linux/commands-concise.md
