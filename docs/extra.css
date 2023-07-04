@@ -9,8 +9,8 @@
   color: black;
 }
 .md-nav .md-nav--secondary{
-  /*导航集成目录左border隐藏*/
-  border : 0px!important; /* 这个样式将具有最高的优先级 */
+  /*导航集成目录左border*/
+  border-left : 0.05em solid #f8f8f8!important; /* 这个样式将具有最高的优先级 */
 }
 div.md-sidebar.md-sidebar--primary > div.md-sidebar__scrollwrap {
   /* 导航nav背景颜色，注意夜间模式 */
