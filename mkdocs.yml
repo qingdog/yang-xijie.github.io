@@ -361,4 +361,4 @@ extra_javascript:
 extra_css:
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
-  - /yang-xijie.github.io/extra.css #我的样式
+  #- /yang-xijie.github.io/extra.css #我的样式
