@@ -18,7 +18,7 @@
   --md-primary-bg-color--light: #0000008a;
   --md-typeset-a-color: #4051b5
 }
-.md-nav__list:first-child {
+.md-sidebar__scrollwrap {
   /* 导航nav背景颜色，注意夜间模式 */
   /* background-color: #f8f8f8; */
   border: 0.05em solid var(--md-primary-fg-color);
