@@ -4,7 +4,7 @@
   /* max-width: 1440px; */
 }
 .md-header--shadow{
-  /* 向下滚动时，把header标题设置背景透明，字体颜色黑色 */
+  /* 向下滚动时，标题header设置背景透明，字体颜色黑色 */
   background-color: rgba(0, 0, 0, 0); /* 使用透明度值为 0 */
   color: black;
 }
@@ -18,10 +18,10 @@
   --md-primary-bg-color--light: #0000008a;
   --md-typeset-a-color: #4051b5
 }
-.md-nav__list {
-  /* 导航背景颜色，注意夜间模式 */
+.md-nav__list:first-child {
+  /* 导航nav背景颜色，注意夜间模式 */
   /* background-color: #f8f8f8; */
-  border: 1px solid var(--md-primary-fg-color);
+  border: 0.05em solid var(--md-primary-fg-color);
 }
 /*导航集成目录左border
 .md-nav--integrated .md-nav__list .md-nav__item--active .md-nav--secondary{
