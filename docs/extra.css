@@ -21,7 +21,7 @@
 .md-nav__list {
   /* 导航背景颜色，注意夜间模式 */
   /* background-color: #f8f8f8; */
-  border: 1rem solid var(--md-primary-fg-color);
+  border: 1px solid var(--md-primary-fg-color);
 }
 /*导航集成目录左border
 .md-nav--integrated .md-nav__list .md-nav__item--active .md-nav--secondary{
