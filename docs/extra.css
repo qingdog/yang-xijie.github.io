@@ -1,13 +1,13 @@
-.md-nav__list {
-  /* 导航背景颜色 */
-  background-color: #f8f8f8;
-}
 .md-grid {
   /*设置内容区域的宽度，使每行的长度不超过 80-100 个字符，具体取决于字符的宽度。虽然这是一个合理的默认值，但由于较长的行往往更难阅读，因此可能需要增加内容区域的整体宽度，甚至使其延伸到整个可用空间。*/
   max-width: 1280px;
   /* max-width: 1440px; */
 }
-
+.md-header--shadow{
+  /* 向下滚动时，把header标题设置背景透明，字体颜色黑色 */
+  background-color: rgba(0, 0, 0, 0); /* 使用透明度值为 0 */
+  color: black;
+}
 [data-md-color-primary=mywhite] {
   /* 主题色 */
   /* --md-primary-fg-color: #fff; */
@@ -18,16 +18,16 @@
   --md-primary-bg-color--light: #0000008a;
   --md-typeset-a-color: #4051b5
 }
-
+.md-nav__list {
+  /* 导航背景颜色，注意夜间模式 */
+  /* background-color: #f8f8f8; */
+  border: 1rem solid var(--md-primary-fg-color);
+}
+/*导航集成目录左border
 .md-nav--integrated .md-nav__list .md-nav__item--active .md-nav--secondary{
-  /* 导航集成目录左border */
-  /* border-left: 1rem solid var(--md-primary-fg-color); */
-	/* border-left: 1rem solid var(--md-primary-fg-color--light); */
+  border-left: 1rem solid var(--md-primary-fg-color);
+	border-left: 1rem solid var(--md-primary-fg-color--light);
 }
 .md-nav.md-nav--secondary {
-  border-left : 1px solid black; /* 这里的 red 可以替换为你想要的边框颜色 */
-}
-.md-header--shadow{
-  background-color: rgba(0, 0, 0, 0); /* 使用透明度值为 0 */
-  color: black;
-}
+  border-left : 1px solid black;
+}*/
