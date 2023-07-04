@@ -24,3 +24,6 @@
   /* border-left: 1rem solid var(--md-primary-fg-color); */
 	border-left: 1rem solid var(--md-primary-fg-color--light);
 }
+.md-nav.md-nav--secondary {
+  border-left : 1px solid black; /* 这里的 red 可以替换为你想要的边框颜色 */
+}
