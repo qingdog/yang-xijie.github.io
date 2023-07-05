@@ -32,7 +32,7 @@ theme:
   features:
     - navigation.tabs # 使用Tab来进行分类
     - navigation.top # 返回顶部的按钮 在上滑时出现
-    - navigation.indexes # Tab会有一个index.md 而不是在打开Tab时打开第一篇文章。这对于提供概述页面特别有用。
+    - navigation.indexes # Tab会有一个index.md 而不是在打开Tab时打开第一篇文章。这对于提供概述页面特别有用。（个别tab可以选择不提供index）
     #- navigation.expand # 打开Tab时左侧目录全部展开
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
     - search.highlight # 搜索出的文章关键词加入高亮
@@ -47,9 +47,10 @@ theme:
     #- navigation.tabs.sticky #启用粘性选项卡后，导航选项卡将锁定在标题下方，并在向下滚动时始终保持可见。（如果不使用固定选项卡，可以搭配回到页面顶部再选择选项卡）
     - toc.integrate #启用目录的导航集成后，它始终呈现为左侧导航侧边栏的一部分。
     - toc.follow #启用目录的锚点跟随，侧边栏会自动滚动，以便活动锚点始终可见。
+  
+    - navigation.sections #顶级部分将在上面的视口侧边栏中呈现为组，
+
   #direction: ltr #设置ltr（left-to-right）读取多种语言，或者rtl（right-to-left）
-
-
   language: zh # 一些提示性的文字会变成中文
   icon:
     repo: fontawesome/brands/github
