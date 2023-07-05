@@ -10,6 +10,7 @@ site_description: 我的个人网站
   #   - WEBSITE/build.md
   #   - WEBSITE/help.md
   #   - WEBSITE/test.md
+nav:
   - 面试:
     - LECTURE/index.md
     - interview-md : interview/README.md
@@ -71,6 +72,14 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/qingdog #右下角
       name: GitHub | Yang-Xijie
+      
+  alternate:
+    - name: English
+      link: /en/ 
+      lang: en
+    - name: Chinese
+      link: /zh/
+      lang: zh
 
 # [Extensions]
 plugins:
