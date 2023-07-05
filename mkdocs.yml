@@ -12,8 +12,7 @@ nav:
   #   - WEBSITE/help.md
   #   - WEBSITE/test.md
     - 面试:
-      - LECTURE/index.md
-  #   - interview-md : interview/README.md
+      - interview-md : interview/README.md
   #   - interview : interview/
   #   - interviewhtml : interview/index.html
     
