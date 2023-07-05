@@ -10,7 +10,10 @@ site_description: 我的个人网站
   #   - WEBSITE/build.md
   #   - WEBSITE/help.md
   #   - WEBSITE/test.md
-
+  - interview:
+    - interview-md : interview/README.md
+    - interview : interview/
+    - interviewhtml : interview/index.html
     
 # [UI]
 ## [top]
