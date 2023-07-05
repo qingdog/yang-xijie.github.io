@@ -5,17 +5,17 @@ site_author: 杨希杰
 site_description: 我的个人网站
 
 # [Navigtion]
+nav:
   # - 网站:
   #   - WEBSITE/index.md # 访客打开网站第一个看到的是 docs/index.md（会报错 The following pages exist in the docs directory, but are not included in the "nav" configuration: index.md 不要紧）  如果访客之后想要重新看到这个界面  可以在 docs/WEBSITE/index.md 找到
   #   - WEBSITE/build.md
   #   - WEBSITE/help.md
   #   - WEBSITE/test.md
-nav:
-  - 面试:
-    - LECTURE/index.md
-    - interview-md : interview/README.md
-    - interview : interview/
-    - interviewhtml : interview/index.html
+  # - 面试:
+  #   - LECTURE/index.md
+  #   - interview-md : interview/README.md
+  #   - interview : interview/
+  #   - interviewhtml : interview/index.html
     
 # [UI]
 ## [top]
@@ -74,12 +74,12 @@ extra:
       name: GitHub | Yang-Xijie
       
   alternate:
-    - name: English
-      link: /en/ 
-      lang: en
     - name: Chinese
-      link: /zh/
+      link: /
       lang: zh
+    # - name: English
+    #   link: /en/
+    #   lang: en
 
 # [Extensions]
 plugins:
