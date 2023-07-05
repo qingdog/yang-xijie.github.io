@@ -11,6 +11,7 @@ site_description: 我的个人网站
   #   - WEBSITE/help.md
   #   - WEBSITE/test.md
   - 面试:
+    - LECTURE/index.md
     - interview-md : interview/README.md
     - interview : interview/
     - interviewhtml : interview/index.html
@@ -61,6 +62,7 @@ repo_name: qingdog.github.io # 右上角的名字
 ## [bottom-left corner]
 copyright: 杨希杰 CC-BY-4.0 # 左下角的版权声明
 ## [bottom-right corner]
+
 extra:
   social: # icons
     - icon: fontawesome/brands/bilibili
