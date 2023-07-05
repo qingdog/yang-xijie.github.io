@@ -5,6 +5,13 @@ site_author: 杨希杰
 site_description: 我的个人网站
 
 # [Navigtion]
+nav:
+  - 讲稿:
+    - LECTURE/index.md
+    - mkdocs-material : https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation
+    - interview-md : interview/README.md
+    - interview : interview/
+    - interviewhtml : interview/index.html
 
 
 # [UI]
