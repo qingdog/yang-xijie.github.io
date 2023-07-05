@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 
-{% block scripts %}
-<!-- Add scripts that need to run before here -->
-{{ super() }}
-<!-- Add scripts that need to run afterwards here -->
+{% block site_nav %}
+<!-- 覆盖导航 -->
 {% endblock %}
 
 {% block htmltitle %}
@@ -16,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -32,7 +30,7 @@
       <button class="back btn" onclick="history.back();">BACK</button>
     </div>
     <div class="astronaut" style="bottom: -100%;">
-      <img src="./asset/astronaut.png" class="astronaut-img" alt="">
+      <img src="./css/asset/astronaut.png" class="astronaut-img" alt="">
     </div>
   </div>
 </body>
@@ -40,6 +38,8 @@
 {% endblock %}
 
 
-{% block site_nav %}
-<!-- 覆盖导航 -->
+{% block scripts %}
+<!-- Add scripts that need to run before here -->
+{{ super() }}
+<!-- Add scripts that need to run afterwards here -->
 {% endblock %}

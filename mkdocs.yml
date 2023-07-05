@@ -111,11 +111,11 @@ extra_javascript:
   - mkdocs/javascripts/mathjax.js
   
   #- https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js # https://cdn.bytedance.com/?query=mathjax&version=3.2.0
-  - tex-mml-chtml.js
+  - mkdocs/tex-mml-chtml.js
   #- https://polyfill.io/v3/polyfill.min.js?features=es6 #Polyfill是一种用于填充浏览器功能差异的JavaScript代码，以便在不支持某些新功能es6的旧浏览器中模拟这些功能。
-  - polyfill.js
+  - mkdocs/polyfill.js
 extra_css:
-  - extra.css #我的样式
+  - mkdocs/extra.css #我的样式
 
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
