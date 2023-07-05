@@ -316,6 +316,7 @@ theme:
     - content.action.edit # 点击按钮跳转到编辑页面  需要结合 edit_uri 一起使用
 
     # 开始我的自定义
+    - navigation.tracking #锚点跟踪，地址栏中的 URL 会自动更新为内容列表中突出显示的活动锚点
     - navigation.instant #启用即时加载后，所有内部链接的点击都将被拦截并通过XHR分派，而无需完全重新加载页。MkDocs 现在的行为类似于单页应用程序。现在，搜索索引可以在导航中保留下来。
     - navigation.path #（仅限赞助商·业内人士-4.28.0 ·实验性的）激活导航路径后，每个页面的标题上方都会呈现面包屑导航，这可能会让用户在屏幕较小的设备上访问文档时更容易定位。
     #- header.autohide #启用自动隐藏后，当用户滚动超过特定阈值时，标题会自动隐藏，从而为内容留出更多空间。
@@ -328,8 +329,8 @@ theme:
     repo: fontawesome/brands/github
 edit_uri: edit/main/docs # 编辑按钮跳转的链接
 ## [top-right corner]
-repo_url: https://github.com/Yang-Xijie/yang-xijie.github.io # 右上角点击跳转的链接
-repo_name: yang-xijie.github.io # 右上角的名字
+repo_url: https://github.com/qingdog/qingdog.github.io # 右上角点击跳转的链接
+repo_name: qingdog.github.io # 右上角的名字
 ## [bottom-left corner]
 copyright: 杨希杰 CC-BY-4.0 # 左下角的版权声明
 ## [bottom-right corner]
@@ -339,7 +340,7 @@ extra:
       link: https://space.bilibili.com/24502827
       name: Bilibili | 杨希杰619 # 鼠标悬浮提示
     - icon: fontawesome/brands/github
-      link: https://github.com/Yang-Xijie
+      link: https://github.com/qingdog
       name: GitHub | Yang-Xijie
 
 # [Extensions]
