@@ -106,7 +106,7 @@ Click on a tile to change the primary color:
 </script>
 <style>
   /*新增https://squidfunk.github.io/mkdocs-material/assets/stylesheets/custom.css*/
-  .md-typeset button[data-md-color-primary] > code
+  div.mdx-switch button[data-md-color-primary] > code
     background-color: var(--md-primary-fg-color);
     color: var(--md-primary-bg-color);
     display: block
