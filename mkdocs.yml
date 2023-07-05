@@ -228,58 +228,7 @@ nav:
       - ESSAY/Jottings/16.md
     - 文章:
       - ESSAY/Articles/230629-account-book.md
-      - ESSAY/Articles/230403-buy-phone.md
-      - ESSAY/Articles/230305-cccc-memory.md
-      - ESSAY/Articles/221227-expressvpn-refund.md
-      - ESSAY/Articles/220921-upgrade-introduction.md
-      - ESSAY/Articles/220715-macbook-story.md
-      - ESSAY/Articles/220624-gratitude.md
-      - ESSAY/Articles/220621-bytedance-interview.md
-      - ESSAY/Articles/220612-reply.md
-      - ESSAY/Articles/2205-good-games.md
-      - ESSAY/Articles/220506-stop-jianshu.md
-      - ESSAY/Articles/220505-library-thu.md
-      - ESSAY/Articles/220415-interestx2.md
-      - ESSAY/Articles/220410-job-discussion.md
-      - ESSAY/Articles/220410-independence.md
-      - ESSAY/Articles/220408-appreciating-girl.md
-      - ESSAY/Articles/220402-languages-comparision.md
-      - ESSAY/Articles/220324-thoughts-996.md
-      - ESSAY/Articles/220107-want-to-be.md
-      - ESSAY/Articles/211104-emotion-bad.md
-      - ESSAY/Articles/210928-apple-recruitment-share.md
-      - ESSAY/Articles/2109-covid-influence.md
-      - ESSAY/Articles/2109-group-clear.md
-      - ESSAY/Articles/210820-cccc-event.md
-      - ESSAY/Articles/210801-affection-3.md
-      - ESSAY/Articles/210519-app-dev-experience.md
-      - ESSAY/Articles/210516-apple-education-address.md
-      - ESSAY/Articles/210502-extend-your-way.md
-      - ESSAY/Articles/201119-a-new-review.md
-      - ESSAY/Articles/200916-my-pursue.md
-      - ESSAY/Articles/200713-sutuo-and-me.md
-      - ESSAY/Articles/200703-talk-with-junior.md
-      - ESSAY/Articles/200607-gaokao-memory.md
-      - ESSAY/Articles/200604-small-goal.md
-      - ESSAY/Articles/200602-tennkinoko.md
-      - ESSAY/Articles/200506-why.md
-      - ESSAY/Articles/2005-travel.md
-      - ESSAY/Articles/190730-tangyan-rd-23.md
-      - ESSAY/Articles/190723-feelings-in-6-days.md
-      - ESSAY/Articles/190707-address-to-nonlocal-students.md
-      - ESSAY/Articles/190629-affection-2.md
-      - ESSAY/Articles/1905-non-intelligent.md
-      - ESSAY/Articles/1901-go-to-thu.md
-      - ESSAY/Articles/1811-do-it.md
-      - ESSAY/Articles/1808-ideality-and-reality.md
-      - ESSAY/Articles/1806-apply-thu.md
-      - ESSAY/Articles/18-tree.md
-      - ESSAY/Articles/18-what-i-love.md
-      - ESSAY/Articles/17-dream-2017.md
-      - ESSAY/Articles/14-affection-1.md
-    - 随笔:
-      - ESSAY/Literature/proses.md
-      - ESSAY/Literature/poems.md
+
 
 # [UI]
 ## [top]
@@ -299,7 +248,7 @@ theme:
         icon: material/weather-sunny
         name: 切换至日间模式
   features:
-    #- navigation.tabs # 使用Tab来进行分类
+    - navigation.tabs # 使用Tab来进行分类
     - navigation.top # 返回顶部的按钮 在上滑时出现
     - navigation.indexes # Tab会有一个index.md 而不是在打开Tab时打开第一篇文章。这对于提供概述页面特别有用。
     #- navigation.expand # 打开Tab时左侧目录全部展开

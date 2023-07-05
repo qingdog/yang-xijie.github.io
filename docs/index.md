@@ -2,7 +2,8 @@
 
 这是使用Github托管的个人网站
 
-MkDocs 入门：https://www.mkdocs.org/getting-started
+MkDocs 入门：<https://www.mkdocs.org/getting-started>
+
 主题为Material for MkDocs：<https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/>
 
 - 通过标签和目录以打开文章
