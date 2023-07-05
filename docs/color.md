@@ -104,6 +104,14 @@ Click on a tile to change the primary color:
     })
   })
 </script>
+<style>
+  /*新增https://squidfunk.github.io/mkdocs-material/assets/stylesheets/custom.css*/
+  .md-typeset button[data-md-color-primary] > code
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    display: block
+  }
+</style>
 
 See our guide below to learn how to set [custom colors].
 
@@ -130,12 +138,6 @@ Click on a tile to change the accent color:
   .md-typeset button[data-md-color-accent] > code {
     background-color: var(--md-code-bg-color);
     color: var(--md-accent-fg-color);
-  }
-  /*新增https://squidfunk.github.io/mkdocs-material/assets/stylesheets/custom.css*/
-  .md-typeset .mdx-switch button>code {
-    background-color: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
-    display: block
   }
 </style>
 
