@@ -50,6 +50,9 @@ theme:
   
     #- navigation.sections #顶级部分将在上面的视口侧边栏中呈现为组。两个功能标志navigation.tabs和navigation.sections可以相互组合。如果两个功能标志均启用，则将为 2 级导航项呈现部分。
 
+
+  custom_dir: overrides #目录中的结构overrides必须镜像原始主题的目录结构，因为目录中的任何文件都overrides将替换属于原始主题的同名文件。
+
   #direction: ltr #设置ltr（left-to-right）读取多种语言，或者rtl（right-to-left）
   language: zh # 一些提示性的文字会变成中文
   icon:
