@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
-{% block htmltitle %}
-  <title>Lorem ipsum dolor sit amet</title>
+{% block scripts %}
+  <!-- Add scripts that need to run before here -->
+  {{ super() }}
+  <!-- Add scripts that need to run afterwards here -->
+
+  <title>404 not found</title>
+
+
 {% endblock %}
