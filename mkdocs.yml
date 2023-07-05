@@ -11,8 +11,8 @@ nav:
   #   - WEBSITE/build.md
   #   - WEBSITE/help.md
   #   - WEBSITE/test.md
-  # - 面试:
-  #   - LECTURE/index.md
+    - 面试:
+      - LECTURE/index.md
   #   - interview-md : interview/README.md
   #   - interview : interview/
   #   - interviewhtml : interview/index.html
@@ -52,6 +52,8 @@ theme:
     #- navigation.tabs.sticky #启用粘性选项卡后，导航选项卡将锁定在标题下方，并在向下滚动时始终保持可见。（如果不使用固定选项卡，可以搭配回到页面顶部再选择选项卡）
     - toc.integrate #启用目录的导航集成后，它始终呈现为左侧导航侧边栏的一部分。
     - toc.follow #启用目录的锚点跟随，侧边栏会自动滚动，以便活动锚点始终可见。
+  #direction: ltr #设置ltr（left-to-right）读取多种语言，或者rtl（right-to-left）
+
 
   language: zh # 一些提示性的文字会变成中文
   icon:
