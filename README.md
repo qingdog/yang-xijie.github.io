@@ -1,4 +1,4 @@
-# 杨希杰的个人网站
+# 个人网站
 
 <https://yang-xijie.github.io>
 
