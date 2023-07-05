@@ -48,7 +48,7 @@ theme:
     - toc.integrate #启用目录的导航集成后，它始终呈现为左侧导航侧边栏的一部分。
     - toc.follow #启用目录的锚点跟随，侧边栏会自动滚动，以便活动锚点始终可见。
   
-    - navigation.sections #顶级部分将在上面的视口侧边栏中呈现为组，
+    #- navigation.sections #顶级部分将在上面的视口侧边栏中呈现为组。两个功能标志navigation.tabs和navigation.sections可以相互组合。如果两个功能标志均启用，则将为 2 级导航项呈现部分。
 
   #direction: ltr #设置ltr（left-to-right）读取多种语言，或者rtl（right-to-left）
   language: zh # 一些提示性的文字会变成中文
