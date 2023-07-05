@@ -69,6 +69,15 @@ theme:
 
 Click on a tile to change the primary color:
 
+<style>
+  /*新增https://squidfunk.github.io/mkdocs-material/assets/stylesheets/custom.css*/
+  div.mdx-switch button[data-md-color-primary] > code {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    display: block
+  }
+</style>
+
 <div class="mdx-switch">
   <button data-md-color-primary="red"><code>red</code></button>
   <button data-md-color-primary="pink"><code>pink</code></button>
@@ -104,14 +113,7 @@ Click on a tile to change the primary color:
     })
   })
 </script>
-<style>
-  /*新增https://squidfunk.github.io/mkdocs-material/assets/stylesheets/custom.css*/
-  div.mdx-switch button[data-md-color-primary] > code
-    background-color: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
-    display: block
-  }
-</style>
+
 
 See our guide below to learn how to set [custom colors].
 
