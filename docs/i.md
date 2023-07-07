@@ -15,3 +15,7 @@
 </style>
 
 <iframe src="https://qingdog.github.io/interview/"></iframe>
+
+{% block site_nav %}
+<!-- 覆盖导航 -->
+{% endblock %}
