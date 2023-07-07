@@ -17,10 +17,6 @@ Click on a tile to change the primary color:
   }
 
 
-body {
-        margin: 0;
-        overflow: hidden; /* 隐藏滚动条 */
-    }
 
     iframe {
         border: none;
