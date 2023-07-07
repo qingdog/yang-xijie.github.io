@@ -16,6 +16,9 @@ Click on a tile to change the primary color:
     display: block
   }
 
+    body {
+        overflow: hidden;
+    }
 
 
     iframe {
@@ -32,6 +35,21 @@ Click on a tile to change the primary color:
 	div.md-sidebar.md-sidebar--primary {
 		display: none;
     }
+
+/* 移除div容器边距 */
+    main > div.md-main__inner.md-grid{
+		margin-top: 0!important;
+		padding: 0!important;
+	}
+    /* 移除div容器边距 */
+    div.md-content > article.md-content__inner.md-typeset{
+		margin: 0!important;
+		padding: 0!important;
+	}
+	/* 隐藏before（block） */
+	div.md-content > article.md-content__inner.md-typeset::before{
+		display: none;
+	}
 </style>
 
 <div class="mdx-switch">

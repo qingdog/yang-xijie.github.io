@@ -1,11 +1,11 @@
 # 面试基础篇
 
 <style>
-    /* 可选的样式调整 */
+    /* 可选的样式调整 
     body {
         margin: 0;
-        overflow: hidden; /* 隐藏滚动条 */
-    }
+        overflow: hidden; 隐藏滚动条
+    }*/
 
     iframe {
         border: none;
