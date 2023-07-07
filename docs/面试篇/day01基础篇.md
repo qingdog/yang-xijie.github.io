@@ -1,7 +1,7 @@
-# 面试基础篇
+## 面试基础篇
 
 <head>
-  <link rel="stylesheet" href="./interview.css">
+  <link rel="stylesheet" href="../interview.css">
 </head>
 
 <iframe src="https://qingdog.github.io/interview/"></iframe>
