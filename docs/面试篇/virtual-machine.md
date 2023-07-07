@@ -37,6 +37,10 @@
 		display: none;
 	}
 
+    .md-grid {
+      max-width: 1280px;
+    }
+
 </style>
 
 <iframe src="https://qingdog.github.io/interview/day03虚拟机篇讲义.html"></iframe>
