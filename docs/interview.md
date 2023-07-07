@@ -14,4 +14,4 @@
         }
     </style>
 
-    <iframe src="https://qingdog.skyman.cloud"></iframe>
+    <iframe src="https://qingdog.github.io/interview/"></iframe>
