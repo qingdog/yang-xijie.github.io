@@ -1,34 +1,4 @@
-# t
-
-``` yaml
-theme:
-  palette:
-    scheme: default
-```
-
-Click on a tile to change the color scheme:
-
-<div class="mdx-switch">
-  <button data-md-color-scheme="default"><code>default</code></button>
-  <button data-md-color-scheme="slate"><code>slate</code></button>
-</div>
-
-<script>
-  var buttons = document.querySelectorAll("button[data-md-color-scheme]")
-  buttons.forEach(function(button) {
-    button.addEventListener("click", function() {
-      document.body.setAttribute("data-md-color-switching", "")
-      var attr = this.getAttribute("data-md-color-scheme")
-      document.body.setAttribute("data-md-color-scheme", attr)
-      var name = document.querySelector("#__code_0 code span.l")
-      name.textContent = attr
-      setTimeout(function() {
-        document.body.removeAttribute("data-md-color-switching")
-      })
-    })
-  })
-</script>
-
+## test2
 
 ``` yaml
 theme:
@@ -83,4 +53,23 @@ Click on a tile to change the primary color:
   })
 </script>
 
-<iframe src="https://qingdog.github.io/interview"></iframe>
+<style>
+    /* 可选的样式调整 */
+    body {
+        margin: 0;
+        overflow: hidden; /* 隐藏滚动条 */
+    }
+
+    iframe {
+        border: none;
+        width: 100%;
+        height: 100vh;
+    }
+	
+	.md-sidebar.md-sidebar--primary {
+		display: none;
+    }
+
+</style>
+
+<iframe src="https://qingdog.github.io/interview/"></iframe>
