@@ -17,6 +17,7 @@ Click on a tile to change the primary color:
   }
 
     body {
+        margin: 0;
         overflow: hidden;
     }
 
