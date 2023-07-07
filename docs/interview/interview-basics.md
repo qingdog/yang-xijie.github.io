@@ -41,6 +41,6 @@
 
 <iframe src="https://qingdog.github.io/interview/"></iframe>
 
-## 面试基础篇
+## 面试并发篇
 
 <iframe src="https://qingdog.github.io/interview/day02并发篇讲义.html"></iframe>
