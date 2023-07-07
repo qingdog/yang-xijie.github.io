@@ -16,10 +16,25 @@ Click on a tile to change the primary color:
     display: block
   }
 
-iframe {
+
+body {
+        margin: 0;
+        overflow: hidden; /* 隐藏滚动条 */
+    }
+
+    iframe {
         border: none;
         width: 100%;
         height: 100vh;
+    }
+
+    /* 隐藏标题 */
+    div.md-content > article.md-content__inner.md-typeset > h1, h2, h3, h4, h5, h6 {
+		display: none;
+	}
+    /* 侧边栏 */
+	div.md-sidebar.md-sidebar--primary {
+		display: none;
     }
 </style>
 
