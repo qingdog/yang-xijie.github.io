@@ -6,8 +6,8 @@ body {
 
 iframe {
     border: none;
-    width: 100%;
-    height: 80vh;
+    width: 97%;
+    height: 80vh; /* 可视百分比 */
 }
 
 /* 隐藏标题 */
@@ -30,6 +30,8 @@ main > div.md-main__inner.md-grid {
 div.md-content > article.md-content__inner.md-typeset {
     margin: 0 !important;
     padding: 0 !important;
+
+    width: 112%; /* 宽度撑满 */
 }
 
 /* 隐藏before（block） */
