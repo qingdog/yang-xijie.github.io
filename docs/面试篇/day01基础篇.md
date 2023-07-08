@@ -1,4 +1,3 @@
-## 面试基础篇
 
 <link rel="stylesheet" href="../interview.css">
 
