@@ -7,7 +7,7 @@ body {
 iframe {
     border: none;
     width: 97%;
-    height: 80vh; /* 可视百分比 */
+    height: 85vh; /* 可视百分比 */
 }
 
 /* 隐藏标题 */
@@ -40,7 +40,7 @@ div.md-content > article.md-content__inner.md-typeset::before {
 }
 
 .md-grid {
-    max-width: 1280px;
+    /*max-width: 1280px;*/
 }
 
 footer.md-footer {
