@@ -3,11 +3,6 @@
 {% block site_nav %}
 <!-- 覆盖导航 -->
 {{ super() }}
-## 123
-{% endblock %}
-
-{% block htmltitle %}
-<title>404 not found</title>
 
 <template id="404">
     <li class="md-nav__item md-nav__item--active">
@@ -22,6 +17,10 @@
     const child = document.importNode(temp.content, true);
     document.querySelector("div.md-sidebar.md-sidebar--primary > div > div > nav > ul.md-nav__list").appendChild(child);
 </script>
+{% endblock %}
+
+{% block htmltitle %}
+<title>404 not found</title>
 {% endblock %}
 
 {% block content %}
