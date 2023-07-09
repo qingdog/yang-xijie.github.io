@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-
+{% block site_nav %}
+<!-- 覆盖导航 -->
+{{ super() }}
+<b>404 not found</b>
+{% endblock %}
 
 {% block htmltitle %}
 <title>404 not found</title>
