@@ -3,7 +3,20 @@
 {% block site_nav %}
 <!-- 覆盖导航 -->
 {{ super() }}
-<b>404 not found</b>
+404 not found
+<li class="md-nav__item md-nav__item--active">
+
+  <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+
+
+
+
+
+  <a href="." class="md-nav__link md-nav__link--active">
+    你好
+  </a>
+
+</li>
 {% endblock %}
 
 {% block htmltitle %}
