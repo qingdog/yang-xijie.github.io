@@ -8,7 +8,7 @@
     iframe {
         border: none;
         width: 100%;
-        height: 100vh;
+        height: 82vh;
     }
 
     /* 隐藏标题 */
