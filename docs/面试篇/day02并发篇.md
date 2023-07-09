@@ -36,7 +36,17 @@
 	}
 
     .md-grid {
-      max-width: 1280px;
+      /* max-width: 1280px; */
+    }
+
+    footer.md-footer {
+        /* 页脚 */
+        display: none;
+    }
+    
+    html:first-of-type {
+        /* 最外层的标签超出高度height的内容不显示滚动条 */
+        overflow-y: hidden;
     }
 
 </style>
