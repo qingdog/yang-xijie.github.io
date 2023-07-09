@@ -8,7 +8,7 @@
 }
 
 body {
-  background: url(./asset/bg.png);
+  /*background: url(./asset/bg.png); 移除背景*/
   background-attachment: fixed;
   background-size: cover;
 }
