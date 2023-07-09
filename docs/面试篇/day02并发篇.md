@@ -35,10 +35,6 @@
 		display: none;
 	}
 
-    .md-grid {
-      /* max-width: 1280px; */
-    }
-
     footer.md-footer {
         /* 页脚 */
         display: none;

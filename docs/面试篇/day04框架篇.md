@@ -8,7 +8,7 @@
     iframe {
         border: none;
         width: 100%;
-        height: 100vh;
+        height: 82vh;
     }
 
     /* 隐藏标题 */
@@ -35,8 +35,9 @@
 		display: none;
 	}
 
-    .md-grid {
-      max-width: 1280px;
+    html:first-of-type {
+        /* 最外层的标签超出高度height的内容不显示滚动条 */
+        overflow-y: hidden;
     }
 
 </style>
