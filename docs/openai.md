@@ -30,7 +30,7 @@
 </body>
 <script>
     function translate() {
-        document.querySelector('input').onclick = function () {
+        document.querySelector("input[type=submit]").onclick = function () {
             const api = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=en-US&dt=t&dt=bd&dj=1&source=icon&tk=294611.294611&q=";
             const url = new URL(api);
             url.searchParams.set('q', document.getElementsByTagName("textarea")[0].value);
@@ -71,7 +71,7 @@
     }
 
     window.onload = function () {
-        const input = document.querySelector('input');
+        const input = document.querySelector("input[type=submit]");
         //translate();
 
         input.addEventListener('click', (event) => {
