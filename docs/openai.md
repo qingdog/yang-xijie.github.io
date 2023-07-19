@@ -159,23 +159,19 @@
 
                 // TextDecoder解码读取的二进制数据为文本
                 const text = new TextDecoder().decode(value);
-
-                // 移除SSE流的数据首6个字节
-                const jsonStr = text.replaceAll("data: ", "");
-                const arr = jsonStr.split("\n");
-                console.info(arr.length);
+				console.log(text);
+                
+                const arr = text.split("\n");
 
                 let jsonObj = {};
                 for (let i = 0; i < arr.length; i++) {
-                    if (arr[i] === "") {
-                        continue;
-                    }
-                    if (arr[i] === "[DONE]") {
-                        break;
-                    }
-                    jsonObj["k" + i] = JSON.parse(arr[i]);
-
-                    console.log(jsonObj["k" + i]);
+                    if (arr[i] === "") continue;
+                    if (arr[i] === "data: [DONE]") break;
+					
+					// 移除SSE流的数据首6个字节
+					//const jsonStr = text.replaceAll("data: ", "");
+					const jsonStr = arr[i].substr(6);
+                    jsonObj["k" + i] = JSON.parse(jsonStr);
 
                     if (jsonObj["k" + i].status === 500) {
                         alert(jsonObj["k" + i].message);
@@ -187,6 +183,7 @@
             }
         } catch (error) {
             console.error("Error:", error);
+			alert('请求出错了！');
         }
     }
 
