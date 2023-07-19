@@ -5,6 +5,11 @@
     <title>测试</title>
 	
 </head>
+
+
+<body>
+
+<iframe src="https://qingdog.github.io/interview/"></iframe>
 <style>
 	/* 可选的样式调整 */
 	body {
@@ -18,10 +23,5 @@
 		height: 100vh;
 	}
 </style>
-
-<body>
-
-<iframe src="https://qingdog.github.io/interview/"></iframe>
-
 </body>
 </html>
