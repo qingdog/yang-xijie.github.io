@@ -71,22 +71,30 @@
     }
 
     window.onload = function () {
-        const input = document.querySelector("input[type=submit]");
-		console.log(input);
-        //translate();
-
-        input.addEventListener('click', (event) => {
-            event.preventDefault();
-
-            let token = "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";
-            let url = "https://api.openai.com/v1/completions";
-
-            url = "https://p0.kamiya.dev/api/openai/chat/completions";
-            token = "sk-oD0CmFb0LfS3ASpF58NlNH8luYO34JkAl2iw2nIrNtuscnWQ";
-
-            callOpenAIWithSSE(url, 'sk-5EzqpaEloq20btdLIlrhDYh50r01kB9cZI6HpPpSUip16sD0', null);
-        });
+        
     }
+	
+	document.addEventListener("DOMContentLoaded", function() {
+		// 页面DOM结构加载完成后的操作
+		
+		const input = document.querySelector("input[type=submit]");
+		console.log(input);
+		//translate();
+
+		input.addEventListener('click', (event) => {
+			event.preventDefault();
+
+			let token = "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";
+			let url = "https://api.openai.com/v1/completions";
+
+			url = "https://p0.kamiya.dev/api/openai/chat/completions";
+			token = "sk-oD0CmFb0LfS3ASpF58NlNH8luYO34JkAl2iw2nIrNtuscnWQ";
+
+			callOpenAIWithSSE(url, 'sk-5EzqpaEloq20btdLIlrhDYh50r01kB9cZI6HpPpSUip16sD0', null);
+		});
+	});
+
+
 
     function send() {
         const url = 'https://api.openai.com/v1/completions';
