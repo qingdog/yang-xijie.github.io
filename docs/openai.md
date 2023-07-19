@@ -24,7 +24,8 @@
     </div>
     <div style="margin-top:10px;">
         <input type="submit" value="测试一下"
-               style="margin:0 auto;padding:5px 10px;border:1px solid #ccc;border-radius:5px;width:100%;">
+               style="margin:0 auto;padding:5px 10px;border:1px solid #ccc;border-radius:5px;width:100%;"
+			   onclick="callOpenAIWithSSE(url, 'sk-5EzqpaEloq20btdLIlrhDYh50r01kB9cZI6HpPpSUip16sD0', null);">
     </div>
 </div>
 
