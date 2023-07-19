@@ -24,11 +24,10 @@
     </div>
     <div style="margin-top:10px;">
         <input type="submit" value="测试一下"
-               style="margin:0 auto;padding:5px 10px;border:1px solid #ccc;border-radius:5px;width:100%;"
-			   onclick="callOpenAIWithSSE('https://p0.kamiya.dev/api/openai/chat/completions', 'sk-5EzqpaEloq20btdLIlrhDYh50r01kB9cZI6HpPpSUip16sD0', null);">
+               style="margin:0 auto;padding:5px 10px;border:1px solid #ccc;border-radius:5px;width:100%;">
     </div>
 </div>
-
+</body>
 <script>
     function translate() {
         document.querySelector("input[type=submit]").onclick = function () {
@@ -71,51 +70,36 @@
         }
     }
 
-    window.onload = function () {
-        
-    }
+    /*window.onload = function () {
+    }*/
 	
 	function onLoadPromise() {
-		console.log(000);
 	  return new Promise(function(resolve) {
 		window.addEventListener('load', resolve);
 	  });
 	}
-
 	onLoadPromise().then(function() {
-		// 在整个页面及其依赖资源加载完成后的异步操作
+	  // 在整个页面及其依赖资源加载完成后的操作
+	});
+	
+	callApi() {
 		const input = document.querySelector("input[type=submit]");
 		console.log(input);
-	});
-	
-	window.addEventListener('load', function() {
-	  // 整个页面及其依赖资源加载完成后的操作
-	  console.log(123);
-	});
+        //translate();
 
+        input.addEventListener('click', (event) => {
+            event.preventDefault();
 
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		// 页面DOM结构加载完成后的操作
-		
-		const input = document.querySelector("input[type=submit]");
-		console.log(true);
-		//translate();
+            let token = "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";
+            let url = "https://api.openai.com/v1/completions";
 
-		input.addEventListener('click', (event) => {
-			event.preventDefault();
+            url = "https://p0.kamiya.dev/api/openai/chat/completions";
+            token = "sk-oD0CmFb0LfS3ASpF58NlNH8luYO34JkAl2iw2nIrNtuscnWQ";
 
-			let token = "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";
-			let url = "https://api.openai.com/v1/completions";
-
-			url = "https://p0.kamiya.dev/api/openai/chat/completions";
-			token = "sk-oD0CmFb0LfS3ASpF58NlNH8luYO34JkAl2iw2nIrNtuscnWQ";
-
-			callOpenAIWithSSE(url, 'sk-5EzqpaEloq20btdLIlrhDYh50r01kB9cZI6HpPpSUip16sD0', null);
-		});
-	});
-
-
+            callOpenAIWithSSE(url, 'sk-5EzqpaEloq20btdLIlrhDYh50r01kB9cZI6HpPpSUip16sD0', null);
+        });
+	}
+	callApi();
 
     function send() {
         const url = 'https://api.openai.com/v1/completions';
@@ -288,5 +272,4 @@
     }
 
 </script>
-</body>
 </html>
