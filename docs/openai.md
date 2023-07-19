@@ -72,6 +72,7 @@
 
     window.onload = function () {
         const input = document.querySelector("input[type=submit]");
+		console.log(input);
         //translate();
 
         input.addEventListener('click', (event) => {
