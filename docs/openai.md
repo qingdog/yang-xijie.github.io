@@ -27,7 +27,7 @@
                style="margin:0 auto;padding:5px 10px;border:1px solid #ccc;border-radius:5px;width:100%;">
     </div>
 </div>
-</body>
+
 <script>
     function translate() {
         document.querySelector("input[type=submit]").onclick = function () {
@@ -280,4 +280,5 @@
     }
 
 </script>
+</body>
 </html>
