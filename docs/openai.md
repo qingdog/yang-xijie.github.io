@@ -114,6 +114,8 @@
     }
 
     async function callOpenAIWithSSE(url, token, model) {
+		document.getElementsByTagName("textarea")[1].value = "发送中。。。";
+		
         const contentStr = document.getElementsByTagName("textarea")[0].value;
         let requestBodyData = {
             messages: [
@@ -138,9 +140,6 @@
 
         requestBodyData.model = model ?? 'gpt-3.5-turbo';
 
-        const textarea = document.getElementsByTagName("textarea")[1];
-        textarea.value = "";
-
         try {
             const response = await fetch(url, {
                 method: "POST",
@@ -152,6 +151,11 @@
             });
 
             const reader = response.body.getReader();
+			
+			const textarea = document.getElementsByTagName("textarea")[1];
+			textarea.value = "";
+			
+			const prefix = 'data: ';
 
             while (true) {
                 const {done, value} = await reader.read();
@@ -168,9 +172,14 @@
                     if (arr[i] === "") continue;
                     if (arr[i] === "data: [DONE]") break;
 					
-					// 移除SSE流的数据首6个字节
-					//const jsonStr = text.replaceAll("data: ", "");
-					const jsonStr = arr[i].substr(6);
+					let jsonStr = null;
+					// 截取SSE流的数据首6个字节
+					if (arr[i].indexOf(prefix) === 0) {
+						jsonStr = arr[i].substr(prefix.length);
+					} else {
+						jsonStr = arr[i];
+					}
+					
                     jsonObj["k" + i] = JSON.parse(jsonStr);
 
                     if (jsonObj["k" + i].status === 500) {
