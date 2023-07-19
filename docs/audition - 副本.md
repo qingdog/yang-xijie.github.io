@@ -5,9 +5,6 @@
     <title>测试</title>
 	
 </head>
-
-
-<body>
 <style>
 	/* 可选的样式调整 */
 	body {
@@ -21,6 +18,9 @@
 		height: 100vh;
 	}
 </style>
+
+<body>
+
 <iframe src="https://qingdog.github.io/interview/"></iframe>
 
 </body>
