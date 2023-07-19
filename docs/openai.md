@@ -76,6 +76,7 @@
     }
 	
 	function onLoadPromise() {
+		console.log(000);
 	  return new Promise(function(resolve) {
 		window.addEventListener('load', resolve);
 	  });
