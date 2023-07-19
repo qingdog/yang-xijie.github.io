@@ -74,11 +74,24 @@
         
     }
 	
+	function onLoadPromise() {
+	  return new Promise(function(resolve) {
+		window.addEventListener('load', resolve);
+	  });
+	}
+
+	onLoadPromise().then(function() {
+		// 在整个页面及其依赖资源加载完成后的异步操作
+		const input = document.querySelector("input[type=submit]");
+		console.log(input);
+	});
+
+	
 	document.addEventListener("DOMContentLoaded", function() {
 		// 页面DOM结构加载完成后的操作
 		
 		const input = document.querySelector("input[type=submit]");
-		console.log(input);
+		console.log(true);
 		//translate();
 
 		input.addEventListener('click', (event) => {
