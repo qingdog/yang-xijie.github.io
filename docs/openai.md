@@ -82,7 +82,7 @@
 	  // 在整个页面及其依赖资源加载完成后的操作
 	});
 	
-	callApi() {
+	function callApi() {
 		const input = document.querySelector("input[type=submit]");
 		console.log(input);
         //translate();
