@@ -31,39 +31,46 @@
 <script>
     function translate() {
         document.querySelector("input[type=submit]").onclick = function () {
-            const api = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=en-US&dt=t&dt=bd&dj=1&source=icon&tk=294611.294611&q=";
-            const url = new URL(api);
+            let api = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=en-US&dt=t&dt=bd&dj=1&source=icon&tk=294611.294611&q=";
+			api = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=en-US&dt=t&dt=bd&dj=1"
+			const url = new URL(api);
             url.searchParams.set('q', document.getElementsByTagName("textarea")[0].value);
 
             const xhr = new XMLHttpRequest();
-            xhr.open('post', url.href, true);
+			// 请求方式 url链接 异步方式
+            xhr.open('get', url.href, true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
             document.getElementsByTagName("textarea")[1].value = "翻译中。。。";
 
+			// 回调函数：处理异步响应结果
             xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        const json = JSON.parse(xhr.responseText);
-                        let value = "";
-                        for (let i = 0; i < json.sentences.length; i++) {
-                            value += json.sentences[i].trans;
-                        }
-                        document.getElementsByTagName("textarea")[1].value = value;
-                        console.log(json);
-                    } else {
-                        // 处理浏览器请求连接超时 net::ERR_CONNECTION_TIMED_OUT
-                        document.getElementsByTagName("textarea")[1].value = "翻译请求出错。";
-                        console.warn(xhr);
-                    }
-                }
+				// readyState为4表示请求已完成
+                if (xhr.readyState != 4) {
+					return;
+				}
+				// status为200表示成功收到响应
+				if (xhr.status != 200) {
+					// 处理错误：连接超时 net::ERR_CONNECTION_TIMED_OUT
+					document.getElementsByTagName("textarea")[1].value = "翻译出错！";
+					console.warn(xhr);	
+				}
+				
+				const json = JSON.parse(xhr.responseText);
+				console.log(json);
+				
+				let value = "";
+				for (let i = 0; i < json.sentences.length; i++) {
+					value += json.sentences[i].trans;
+				}
+				document.getElementsByTagName("textarea")[1].value = value;
             };
 
             // 设置超时时间为 5 秒视为错误停止请求
             xhr.timeout = 5000;
             xhr.ontimeout = function () {
-                document.getElementsByTagName("textarea")[1].value = "请求 API 超时。";
-                console.warn("请求超过5s！");
+                document.getElementsByTagName("textarea")[1].value = "请求 API 超时！";
+                console.error("请求超过5s！");
             };
 
             xhr.send();
@@ -84,7 +91,6 @@
 	
 	function callApi() {
 		const input = document.querySelector("input[type=submit]");
-		console.log(input);
         //translate();
 
         input.addEventListener('click', (event) => {
@@ -101,32 +107,7 @@
 	}
 	callApi();
 
-    function send() {
-        const url = 'https://api.openai.com/v1/completions';
-        document.getElementsByTagName("textarea")[1].value = "发送中。。。";
-
-        const xhr = new XMLHttpRequest();
-        xhr.open('post', url, true);
-
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                console.log(xhr.responseText);
-                const json = JSON.parse(xhr.responseText);
-                document.getElementsByTagName("textarea")[1].value = json.choices[0].text;
-                console.log(json);
-            }
-        };
-
-        const value = document.getElementsByTagName("textarea")[0].value;
-        let json = {model: 'gpt-3', max_tokens: 2048, prompt: value};
-
-        console.log(json);
-        xhr.send(JSON.stringify(json));
-    }
-
+    
     async function callOpenAIWithSSE(url, token, model) {
 		document.getElementsByTagName("textarea")[1].value = "发送中。。。";
 		
@@ -177,7 +158,7 @@
 
                 // TextDecoder解码读取的二进制数据为文本
                 const text = new TextDecoder().decode(value);
-				console.log(text);
+				//console.log(text);
                 
                 const arr = text.split("\n");
 
@@ -208,67 +189,52 @@
             console.error("Error:", error);
 			alert('请求出错了！');
         }
+		getCost(token);
     }
+	
+	function getCost(secretKey) {
+		fetch("https://p0.kamiya.dev/api/billing/history?start=1&take=2", {
+		  "headers": {
+			"authorization": "Bearer " + secretKey,
+			"content-type": "application/x-www-form-urlencoded",
+		  },
+		  "method": "GET",
+		})
+		.then(response => response.json())
+		.then(json => {
+			console.info(json.data[0]);
+		})
+		.catch((error) => {
+			// 处理错误：连接超时 net::ERR_CONNECTION_TIMED_OUT
+			console.error('错误：', error);
+		});
+	}
+	
+	
+	function send() {
+        const url = 'https://api.openai.com/v1/completions';
+        document.getElementsByTagName("textarea")[1].value = "发送中。。。";
 
-    function oldCallOpenAI(token) {
-        const contentStr = document.getElementsByTagName("textarea")[0].value;
+        const xhr = new XMLHttpRequest();
+        xhr.open('post', url, true);
 
-        const url = 'https://p0.kamiya.dev/api/openai/chat/completions';
-        const data = {
-            "messages": [
-                {
-                    "role": "system",
-                    "content": "You are ChatGPT, a large language model trained by OpenAI.\nCarefully heed the user's instructions. \nRespond using Markdown."
-                },
-                {
-                    "role": "user",
-                    "content": contentStr
-                }
-            ],
-            "model": "openai:gpt-3.5-turbo",
-            "max_tokens": null,
-            "temperature": 1,
-            "presence_penalty": 0,
-            "top_p": 1,
-            "frequency_penalty": 0,
-            "stream": true
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+                const json = JSON.parse(xhr.responseText);
+                document.getElementsByTagName("textarea")[1].value = json.choices[0].text;
+                console.log(json);
+            }
         };
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => response.text())  // 使用 text() 而不是 json()
-            .then(data => {
-                let jsonStr = data.replaceAll('data: ', '');  // 删除 "data: " 字符串
-                jsonStr = jsonStr.replaceAll('[DONE]', '');
-                let arr = jsonStr.split('\n');
+        const value = document.getElementsByTagName("textarea")[0].value;
+        let json = {model: 'gpt-3', max_tokens: 2048, prompt: value};
 
-                console.log(arr.length);
-
-                let textarea = document.getElementsByTagName("textarea")[1]
-                textarea.value = "";
-
-                const jsonObj = {};
-                for (let i = 0; i < arr.length; i++) {
-                    if (arr[i] != '') {
-                        jsonObj['k' + i] = JSON.parse(arr[i])
-
-                        let responseStr = jsonObj['k' + i].choices[0].delta.content ?? '';
-                        document.getElementsByTagName("textarea")[1].value = textarea.value + responseStr;
-
-                    }
-                }
-                console.log(jsonObj['k0'].choices[0].delta.content);
-
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+        console.log(json);
+        xhr.send(JSON.stringify(json));
     }
 
 </script>
