@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -16,7 +17,7 @@
     </style>
     <title>ChatGPT App</title>
 </head>
-<body class="bg-pink-50 min-h-screen">
+<body class="bg-white min-h-screen" style="background-color: rgb(241 245 249);">
     <div class="container mx-auto px-4 py-8">
         <form id="chat-form" class="space-y-4">
             <div id="messages" class="bg-white border-2 border-gray-300 p-4 mb-4">
