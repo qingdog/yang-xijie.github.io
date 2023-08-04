@@ -8,6 +8,10 @@ hide:
 	overflow: initial;
 	padding: 0;
 }
+a{
+color: inherit;
+text-decoration: none;
+}
 </style>
 
 <!DOCTYPE html>
@@ -64,7 +68,7 @@ hide:
     </div>
 	
 	<!-- markdown格式 -->
-	<script src="https://unpkg.com/marked@6.0.0/marked.min.js"></script>
+	<script onload="loadMarkedScript()" src="https://unpkg.com/marked@6.0.0/marked.min.js"></script>
 	
 	<!-- prism高亮 -->
 	<link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css">
@@ -125,12 +129,15 @@ hide:
 		}
 		//load();
 		
-		marked.setOptions({
-			// mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
-			mangle: false,
-			// 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
-			headerIds: false
-		});
+		function loadMarkedScript(){
+			marked.setOptions({
+				// mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
+				mangle: false,
+				// 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
+				headerIds: false
+			});
+		}
+		
 
         document.querySelector('form[name=mes]').addEventListener("submit", (event) => {
             event.preventDefault();
