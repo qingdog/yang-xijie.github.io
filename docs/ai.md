@@ -84,7 +84,7 @@
 			headerIds: false
 		});
 
-        const form = document.querySelector('form#message');
+        const form = document.querySelector('form#mes');
         const messageInput = document.querySelector('form input');
         const messages = document.getElementById("messages");
 
