@@ -139,7 +139,7 @@ hide:
         })(0);
     }
 
-    load();
+    //load();
 
 
     document.querySelector('form[name=mes]').addEventListener("submit", (event) => {
