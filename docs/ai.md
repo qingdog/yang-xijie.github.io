@@ -16,15 +16,14 @@ hide:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<!-- 插件工具栏 -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.js"></script>
+	
 	
 	<!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
+	
 
 	<title>ChatGPT App</title>
 </head>
@@ -80,7 +79,9 @@ hide:
 	<!-- 自动加载高亮语言语法的js代码 -->
 	<script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 	
-	
+	<!-- 插件工具栏 -->
+	<script type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 	
 	<!-- 插件工具栏复制 -->
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
@@ -92,6 +93,38 @@ hide:
 	<script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 	
     <script>
+	function loadScript(url, fn) {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		script.src = url;
+		script.onload = script.onreadystatechange = function () {
+		if (!script.readyState || 'loaded' === script.readyState || 'complete' === script.readyState) {
+		fn && fn();
+		}
+		};
+		script.src = url;
+		document.head.appendChild(script);
+		}
+		
+		function load(){
+			var newScripts = ["http://cdn.bootcss.com/Chart.js/2.0.0-alpha3/Chart.js",
+				"http://cdn.bootcss.com/jquery/1.11.2/jquery.js",
+				"http://cdn.gbtags.com/jquery-color/2.1.2/jquery.color.min.js",
+				"http://cdn.gbtags.com/jquery-easing/1.3/jquery.easing.min.js"];
+				//迭代加载,callback为全部加载完成后的回调函数
+				(function scriptRecurse(count, callback) {
+					if (count == newScripts.length) {
+						callback && callback();
+							} else {
+								loadScript(newScripts[count], function () {
+								document.getElementsByTagName('head')[0].innerHTML+=newScripts[count]+";<br>";
+								scriptRecurse(++count, callback);
+						});
+					}
+				})(0);
+		}
+		//load();
+		
 		marked.setOptions({
 			// mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
 			mangle: false,
