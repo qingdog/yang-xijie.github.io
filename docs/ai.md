@@ -66,8 +66,6 @@ hide:
 
 </div>
 
-<!-- markdown格式 -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" onload="loadMarkedScript();"></script>
 <script>
     function loadMarkedScript() {
         marked.setOptions({
@@ -78,6 +76,9 @@ hide:
         });
     }
 </script>
+<!-- markdown格式 -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" onload="loadMarkedScript();"></script>
+
 <!-- prism高亮 -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css">
 <style>
