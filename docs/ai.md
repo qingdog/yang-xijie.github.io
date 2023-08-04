@@ -97,7 +97,7 @@ hide:
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
 <!-- 插件工具栏复制 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+<script src=""></script>
 <!-- 插件工具栏显示语言 -->
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
 
@@ -122,7 +122,7 @@ hide:
     function load() {
         var newScripts = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
         
-        newScripts.push("https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js");
+        newScripts.push("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
 
         //迭代加载,callback为全部加载完成后的回调函数
         (function scriptRecurse(count, callback) {
