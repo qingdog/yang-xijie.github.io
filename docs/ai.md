@@ -96,11 +96,10 @@ hide:
 			headerIds: false
 		});
 
-        const formMes = document.querySelector('form[name=mes]');
-        const messageInput = formMes.querySelector('input');
+        const messageInput = document.querySelector('form[name=mes]').querySelector('input');
         const messages = document.getElementById("messages");
 
-        formMes.addEventListener("submit", (event) => {
+        document.querySelector('form[name=mes]').addEventListener("submit", (event) => {
             event.preventDefault();
 			
 			const userMessage = document.createElement("div");
