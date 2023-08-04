@@ -18,12 +18,13 @@ hide:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
 
     <style>
         a {
@@ -110,6 +111,35 @@ hide:
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
+<script type="text/javascript" src="https://unpkg.com/requirejs@2.3.6/require.js"></script>
+<script>
+    require.config({
+        paths: {
+            'script1': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
+            'script2': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
+            'script3': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min'
+        },
+        shim: {
+            'script1': {
+                exports: 'script1'
+            },
+            'script2': {
+                deps: ['script1'],
+                exports: 'script2'
+            },
+            'script3': {
+                deps: ['script2'],
+                exports: 'script3'
+            }
+        }
+    });
+
+    // 加载入口模块
+    require(['script3'], function(script3) {
+        // 在这里使用script3
+    });
+</script>
+
 <script>
 
     function loadScriptsInOrder(scripts, index) {
@@ -129,7 +159,7 @@ hide:
 
     scriptUrls.push("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
     scriptUrls.push("https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js");
-    loadScriptsInOrder(scriptUrls);
+    //loadScriptsInOrder(scriptUrls);
 
 
     // 兼容xhr异步加载。不使用script标签，使用js代码按顺序加载cdn
