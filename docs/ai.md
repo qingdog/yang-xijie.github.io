@@ -94,13 +94,13 @@ hide:
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
 <!-- 插件工具栏 -->
-<script type="text/javascript" src=""></script>
+<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
-<!-- 插件工具栏复制
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>-->
-<!-- 插件工具栏显示语言
-<script src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
+<!-- 插件工具栏复制-->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+<!-- 插件工具栏显示语言-->
+<script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
 
 <!-- 给class='line-numbers'加行号 -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
@@ -114,8 +114,6 @@ hide:
         script.src = url;
         script.onload = script.onreadystatechange = function () {
             if (!script.readyState || 'loaded' === script.readyState || 'complete' === script.readyState) {
-            //if ('complete' === script.readyState) {
-                console.log(script.readyState);
                 // 首先判断fn是否存在（不为null或undefined），然后再执行fn()。
                 fn && fn();
             }
@@ -125,15 +123,14 @@ hide:
     }
 
     function load() {
-        const newScripts = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
+        var newScripts = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
 
         newScripts.push("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
         newScripts.push("https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js");
 
-        //自执行函数，参数count传入0和未定义的回调函数。迭代加载, callback为全部加载完成后的回调函数
+        //迭代加载,callback为全部加载完成后的回调函数
         (function scriptRecurse(count, callback) {
-            if (count === newScripts.length) {
-                console.log(true);
+            if (count == newScripts.length) {
                 callback && callback();
             } else {
                 loadScript(newScripts[count], function () {
@@ -143,7 +140,7 @@ hide:
             }
         })(0);
     }
-    load();
+    //load();
 
 
     document.querySelector('form[name=mes]').addEventListener("submit", (event) => {
