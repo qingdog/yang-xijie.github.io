@@ -119,10 +119,10 @@ hide:
     }
 
     function load() {
-        var newScripts = ["http://cdn.bootcss.com/Chart.js/2.0.0-alpha3/Chart.js",
-            "http://cdn.bootcss.com/jquery/1.11.2/jquery.js",
-            "http://cdn.gbtags.com/jquery-color/2.1.2/jquery.color.min.js",
-            "http://cdn.gbtags.com/jquery-easing/1.3/jquery.easing.min.js"];
+        var newScripts = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
+        
+        newScripts.push("https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js");
+
         //迭代加载,callback为全部加载完成后的回调函数
         (function scriptRecurse(count, callback) {
             if (count == newScripts.length) {
