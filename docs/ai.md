@@ -11,6 +11,12 @@ hide:
         padding: 0;
     }
 </style>
+<style>
+    pre.line-numbers {
+        /*给tomorrow主题加圆角*/
+        border-radius: 0.3em;
+    }
+</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,12 +94,7 @@ hide:
 
 <!-- prism高亮 -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css">
-<style>
-    pre.line-numbers {
-        /*给tomorrow主题加圆角*/
-        border-radius: 0.3em;
-    }
-</style>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 
 
