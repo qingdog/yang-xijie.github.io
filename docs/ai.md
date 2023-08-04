@@ -40,7 +40,7 @@ hide:
                         <!-- Chat messages will be displayed here -->	
                     </div>
 					
-                    <form id="mes">
+                    <form name="mes">
 						<div class="card-footer">
 							<div class="input-group">
 								<input type="text" class="form-control border-info" placeholder="Type your message...">
@@ -71,7 +71,7 @@ hide:
 			border-radius: 0.3em;
 		}
 	</style>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+	<script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 	
 	<!-- 自动加载高亮语言语法的js代码 -->
 	<script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
@@ -96,11 +96,11 @@ hide:
 			headerIds: false
 		});
 
-        const form = document.querySelector('form#mes');
-        const messageInput = document.querySelector('form#mes input');
+        const formMes = document.querySelector('form[name=mes]');
+        const messageInput = formMes.querySelector('input');
         const messages = document.getElementById("messages");
 
-        form.addEventListener("submit", (event) => {
+        formMes.addEventListener("submit", (event) => {
             event.preventDefault();
 			
 			const userMessage = document.createElement("div");
