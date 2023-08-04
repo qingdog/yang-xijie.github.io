@@ -99,8 +99,8 @@ hide:
 <!-- 自动加载高亮语言语法的js代码 -->
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
-<!-- 插件工具栏
-<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>-->
+<!-- 插件工具栏-->
+<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
 <!-- 插件工具栏复制
