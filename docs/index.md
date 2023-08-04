@@ -8,6 +8,14 @@
 - 搜索关键词
     - 键入以开始搜索文章
 
+---
+
+## 网站
+
+[ai]: ./ai/
+[buildpicoapps.com/ask_ai_streaming][ai]
+
+
 > MkDocs 入门：<https://www.mkdocs.org/getting-started>
 > 
 > 主题为 Material for MkDocs：<https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/> 
