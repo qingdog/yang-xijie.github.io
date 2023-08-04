@@ -940,7 +940,7 @@ $ apt install nginx
 ```shell
 $ mkdir /root/website
 $ cd /root/website
-$ vim .index.md
+$ vim index.md
 ```
 
 ```shell
