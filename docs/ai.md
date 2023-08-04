@@ -115,12 +115,12 @@ hide:
         script.onload = script.onreadystatechange = function () {
             if (!script.readyState || 'loaded' === script.readyState || 'complete' === script.readyState) {
             //if ('complete' === script.readyState) {
+                console.log(script.readyState);
                 // 首先判断fn是否存在（不为null或undefined），然后再执行fn()。
                 fn && fn();
             }
         };
         script.src = url;
-        console.log(url);
         document.head.appendChild(script);
     }
 
@@ -130,7 +130,7 @@ hide:
         newScripts.push("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
         newScripts.push("https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js");
 
-        //自执行函数参数count传入0。迭代加载, callback为全部加载完成后的回调函数
+        //自执行函数，参数count传入0和未定义的回调函数。迭代加载, callback为全部加载完成后的回调函数
         (function scriptRecurse(count, callback) {
             if (count === newScripts.length) {
                 console.log(true);
@@ -138,7 +138,6 @@ hide:
             } else {
                 loadScript(newScripts[count], function () {
                     //document.getElementsByTagName('head')[0].innerHTML += newScripts[count] + ";<br>";
-                    console.log(count);
                     scriptRecurse(++count, callback);
                 });
             }
