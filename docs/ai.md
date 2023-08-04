@@ -64,11 +64,11 @@ hide:
         <a href="#" class="text-indigo-700">Made with ❤️</a>
     </footer>
 
-    <pre data-src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js" data-label="Hello World!"></pre>
 </div>
 
 <script>
     function loadMarkedScript() {
+        console.log('loadMarkedScript');
         marked.setOptions({
             // mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
             mangle: false,
@@ -108,11 +108,12 @@ hide:
 
 <script>
     function loadScript(url, fn) {
-        var script = document.createElement("script");
+        const script = document.createElement("script");
         script.type = "text/javascript";
         script.src = url;
         script.onload = script.onreadystatechange = function () {
             if (!script.readyState || 'loaded' === script.readyState || 'complete' === script.readyState) {
+                // 首先判断fn是否存在（不为null或undefined），然后再执行fn()。
                 fn && fn();
             }
         };
@@ -132,14 +133,13 @@ hide:
                 callback && callback();
             } else {
                 loadScript(newScripts[count], function () {
-                    document.getElementsByTagName('head')[0].innerHTML += newScripts[count] + ";<br>";
+                    //document.getElementsByTagName('head')[0].innerHTML += newScripts[count] + ";<br>";
                     scriptRecurse(++count, callback);
                 });
             }
         })(0);
     }
-
-    //load();
+    load();
 
 
     document.querySelector('form[name=mes]').addEventListener("submit", (event) => {
