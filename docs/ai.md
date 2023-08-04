@@ -107,17 +107,20 @@ hide:
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
 <script>
+    // 兼容xhr异步加载。不使用script标签，使用js代码按顺序加载cdn
     function loadScript(url, fn) {
         const script = document.createElement("script");
         script.type = "text/javascript";
         script.src = url;
         script.onload = script.onreadystatechange = function () {
-            if (!script.readyState || 'loaded' === script.readyState || 'complete' === script.readyState) {
+            //if (!script.readyState || 'loaded' === script.readyState || 'complete' === script.readyState) {
+            if ('complete' === script.readyState) {
                 // 首先判断fn是否存在（不为null或undefined），然后再执行fn()。
                 fn && fn();
             }
         };
         script.src = url;
+        console.log(url);
         document.head.appendChild(script);
     }
 
