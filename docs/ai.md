@@ -28,7 +28,7 @@
                         <!-- Chat messages will be displayed here -->	
                     </div>
 					
-                    <form>
+                    <form id="mes">
 						<div class="card-footer">
 							<div class="input-group">
 								<input type="text" class="form-control border-info" placeholder="Type your message...">
@@ -84,7 +84,7 @@
 			headerIds: false
 		});
 
-        const form = document.getElementsByTagName('form')[0];
+        const form = document.querySelector('form#message');
         const messageInput = document.querySelector('form input');
         const messages = document.getElementById("messages");
 
