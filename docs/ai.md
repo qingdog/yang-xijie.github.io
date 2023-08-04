@@ -64,8 +64,7 @@ hide:
         <a href="#" class="text-indigo-700">Made with ❤️</a>
     </footer>
 
-    <pre data-src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"
-         data-label="Hello World!" style="display: none;"></pre>
+    <pre data-src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js" data-label="Hello World!"></pre>
 </div>
 
 <script>
@@ -95,12 +94,13 @@ hide:
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
 <!-- 插件工具栏 -->
-<script type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+<script type="text/javascript" src=""></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
-<!-- 插件工具栏复制 -->
-<!-- 插件工具栏显示语言 -->
-<script src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+<!-- 插件工具栏复制
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>-->
+<!-- 插件工具栏显示语言
+<script src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
 <!-- 给class='line-numbers'加行号 -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
@@ -121,9 +121,10 @@ hide:
     }
 
     function load() {
-        var newScripts = [];
+        var newScripts = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
 
         newScripts.push("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
+        newScripts.push("https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js");
 
         //迭代加载,callback为全部加载完成后的回调函数
         (function scriptRecurse(count, callback) {
