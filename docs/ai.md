@@ -66,10 +66,18 @@ hide:
 
 </div>
 
-
 <!-- markdown格式 -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-
+<script type="text/javascript" src="https://unpkg.com/marked@6.0.0/marked.min.js" onload="loadMarkedScript();"></script>
+<script>
+    function loadMarkedScript() {
+        marked.setOptions({
+            // mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
+            mangle: false,
+            // 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
+            headerIds: false
+        });
+    }
+</script>
 <!-- prism高亮 -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css">
 <style>
@@ -78,7 +86,7 @@ hide:
         border-radius: 0.3em;
     }
 </style>
-<script type="text/javascript" src=""></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 
 <!-- 自动加载高亮语言语法的js代码 -->
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
@@ -111,7 +119,7 @@ hide:
     }
 
     function load() {
-        var newScripts = ["https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"];
+        var newScripts = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
         
         newScripts.push("https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js");
 
@@ -126,13 +134,6 @@ hide:
                 });
             }
         })(0);
-
-        marked.setOptions({
-            // mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
-            mangle: false,
-            // 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
-            headerIds: false
-        });
     }
 
     load();
