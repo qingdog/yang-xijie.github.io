@@ -78,7 +78,7 @@ hide:
         border-radius: 0.3em;
     }
 </style>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script type="text/javascript" src=""></script>
 
 <!-- 自动加载高亮语言语法的js代码 -->
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
@@ -111,7 +111,7 @@ hide:
     }
 
     function load() {
-        var newScripts = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
+        var newScripts = ["https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"];
         
         newScripts.push("https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js");
 
