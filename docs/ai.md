@@ -67,7 +67,7 @@ hide:
 </div>
 
 <!-- markdown格式 -->
-<script onload="loadMarkedScript()" src="https://unpkg.com/marked@6.0.0/marked.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" onload="loadMarkedScript();"></script>
 <script>
     function loadMarkedScript() {
         marked.setOptions({
