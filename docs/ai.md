@@ -66,18 +66,17 @@ hide:
 
 </div>
 
-<script>
-    function loadMarkedScript() {
-        marked.setOptions({
-            // mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
-            mangle: false,
-            // 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
-            headerIds: false
-        });
-    }
-</script>
+
 <!-- markdown格式 -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" onload="loadMarkedScript();"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script>
+    marked.setOptions({
+        // mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
+        mangle: false,
+        // 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
+        headerIds: false
+    });
+</script>
 
 <!-- prism高亮 -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css">
