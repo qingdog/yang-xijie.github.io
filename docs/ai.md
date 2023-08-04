@@ -1,7 +1,9 @@
 ---
 hide:
+
 - navigation
 - toc
+
 ---
 <style>
     .md-typeset pre > code {
@@ -16,7 +18,6 @@ hide:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <!-- Font Awesome CSS -->
@@ -29,6 +30,7 @@ hide:
         }
     </style>
     <title>ChatGPT App</title>
+
 </head>
 
 
@@ -93,20 +95,41 @@ hide:
 <!-- 自动加载高亮语言语法的js代码 -->
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
-<!-- 插件工具栏 -->
-<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+<!-- 插件工具栏
+<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
-<!-- 插件工具栏复制-->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
-<!-- 插件工具栏显示语言-->
-<script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+<!-- 插件工具栏复制
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>-->
+<!-- 插件工具栏显示语言
+<script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
 <!-- 给class='line-numbers'加行号 -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
 <script>
+
+    function loadScriptsInOrder(scripts, index) {
+        index = index || 0;
+        if (index < scripts.length) {
+            var script = document.createElement('script');
+            script.src = scripts[index];
+            script.onload = function() {
+                loadScriptsInOrder(scripts, index + 1);
+            };
+            document.head.appendChild(script);
+        }
+    }
+
+    //var scriptUrls = ['script1.js', 'script2.js', 'script3.js'];
+    var scriptUrls = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
+
+    scriptUrls.push("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
+    scriptUrls.push("https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js");
+    loadScriptsInOrder(scriptUrls);
+
+
     // 兼容xhr异步加载。不使用script标签，使用js代码按顺序加载cdn
     function loadScript(url, fn) {
         const script = document.createElement("script");
