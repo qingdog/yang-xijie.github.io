@@ -96,6 +96,10 @@ hide:
 </style>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 
+
+<script src="https://unpkg.com/requirejs@2.3.6/require.js" data-main="../entryModule"></script>
+
+
 <!-- 自动加载高亮语言语法的js代码 -->
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
@@ -103,8 +107,8 @@ hide:
 <script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
-<!-- 插件工具栏复制
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>-->
+<!-- 插件工具栏复制-->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 <!-- 插件工具栏显示语言
 <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
@@ -114,7 +118,7 @@ hide:
 
 
 
-<script src="https://unpkg.com/requirejs@2.3.6/require.js" data-main="../entryModule"></script>
+
 
 
 <script>
