@@ -3,6 +3,12 @@ hide:
   - navigation
   - toc
 ---
+<style>
+.md-typeset pre>code{
+	overflow: initial;
+	padding: 0;
+}
+</style>
 
 <!DOCTYPE html>
 <html lang="en">
