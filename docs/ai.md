@@ -116,16 +116,16 @@ text-decoration: none;
 				"http://cdn.gbtags.com/jquery-color/2.1.2/jquery.color.min.js",
 				"http://cdn.gbtags.com/jquery-easing/1.3/jquery.easing.min.js"];
 				//迭代加载,callback为全部加载完成后的回调函数
-				(function scriptRecurse(count, callback) {
-					if (count == newScripts.length) {
-						callback && callback();
-							} else {
-								loadScript(newScripts[count], function () {
-								document.getElementsByTagName('head')[0].innerHTML+=newScripts[count]+";<br>";
-								scriptRecurse(++count, callback);
-						});
-					}
-				})(0);
+			(function scriptRecurse(count, callback) {
+				if (count == newScripts.length) {
+					callback && callback();
+						} else {
+							loadScript(newScripts[count], function () {
+							document.getElementsByTagName('head')[0].innerHTML+=newScripts[count]+";<br>";
+							scriptRecurse(++count, callback);
+					});
+				}
+			})(0);
 		}
 		//load();
 		
