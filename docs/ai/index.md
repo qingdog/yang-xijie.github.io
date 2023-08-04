@@ -74,7 +74,6 @@ hide:
     <footer class="mt-8" style="float: right;">
         <a href="#" class="text-indigo-700">Made with ❤️</a>
     </footer>
-    <pre data-src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js" data-label="Hello World!"></pre>
 
 </div>
 
