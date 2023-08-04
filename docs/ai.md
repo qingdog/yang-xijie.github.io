@@ -85,7 +85,7 @@
 		});
 
         const form = document.querySelector('form#mes');
-        const messageInput = document.querySelector('form input');
+        const messageInput = document.querySelector('form#mes input');
         const messages = document.getElementById("messages");
 
         form.addEventListener("submit", (event) => {
