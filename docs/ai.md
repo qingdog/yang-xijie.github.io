@@ -112,8 +112,8 @@ hide:
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
-<script type="text/javascript" src="https://unpkg.com/requirejs@2.3.6/require.js"></script>
-<script>
+<script defer type="text/javascript" src="https://unpkg.com/requirejs@2.3.6/require.js"></script>
+<script defer>
     require.config({
         paths: {
             'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
