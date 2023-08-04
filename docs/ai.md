@@ -36,11 +36,10 @@ hide:
                         <i class="fas fa-comments"></i> Chat
                     </div>
 					
-					<div class="card-body p-4 mb-4" id="messages">
-                        <!-- Chat messages will be displayed here -->	
-                    </div>
-					
                     <form name="mes">
+						<div class="card-body p-4 mb-4" id="messages">
+							<!-- Chat messages will be displayed here -->	
+						</div>
 						<div class="card-footer">
 							<div class="input-group">
 								<input type="text" class="form-control border-info" placeholder="Type your message...">
@@ -97,11 +96,11 @@ hide:
 			headerIds: false
 		});
 
-        let messageInput = document.querySelector('form[name=mes]').querySelector('input');
-        let messages = document.getElementById("messages");
-
-        document.querySelector('form[name=mes]').addEventListener("submit", (event) => {
+        document.querySelector('form[name=mes]').addEventListener("submit", (event, element) => {
             event.preventDefault();
+			
+			const messageInput = document.querySelector('form[name=mes] input');
+			const messages = document.getElementById("messages");
 			
 			const userMessage = document.createElement("div");
             userMessage.classList.add("my-4");
