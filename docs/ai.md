@@ -3,53 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 	
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-        }
-    </style>
-    <title>ChatGPT App</title>
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+	<title>ChatGPT App</title>
 </head>
-<body class="bg-white min-h-screen" style="background-color: rgb(241 245 249);">
-    <div class="container mx-auto px-4 py-8">
-        <form id="chat-form" class="space-y-4">
-            <div id="messages" class="bg-white border-2 border-gray-300 p-4 mb-4">
-            </div>
-            <label for="message" class="block">
-                Message or question for ChatGPT
-                <input type="text" id="message" name="message" class="w-full border-2 border-gray-300 focus:border-indigo-500 p-2 mt-1">
-            </label>
-            <button type="submit" class="bg-indigo-700 text-white py-2 px-4 rounded">Send</button>
-        </form>
 
-        <footer class="mt-8">
+
+<body style="background-color: rgb(241 245 249);" class="line-numbers"> <!-- enabled for the whole page -->
+
+	<div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+				
+                    <div class="card-header">
+                        <i class="fas fa-comments"></i> Chat
+                    </div>
+					
+					<div class="card-body p-4 mb-4" id="messages">
+                        <!-- Chat messages will be displayed here -->	
+                    </div>
+					
+                    <form>
+						<div class="card-footer">
+							<div class="input-group">
+								<input type="text" class="form-control border-info" placeholder="Type your message...">
+								<button class="btn btn-primary" id="sendMessageBtn">Send</button>
+							</div>
+						</div>
+					</form>
+					
+                </div>
+            </div>
+        </div>
+		
+		
+		<footer class="mt-8" style="float: right;">
             <a href="#" class="text-indigo-700">Made with ❤️</a>
         </footer>
-    </div>
 
-	<script src="https://cdn.bootcdn.net/ajax/libs/marked/2.1.3/marked.min.js"></script>
+    </div>
 	
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/default.min.css">
-	<script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<!-- markdown格式 -->
+	<script src="https://unpkg.com/marked@6.0.0/marked.min.js"></script>
+	
+	<!-- prism高亮 -->
+	<link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+	<style>
+		pre.line-numbers {
+			/*给tomorrow主题加圆角*/
+			border-radius: 0.3em;
+		}
+	</style>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+	
+	<!-- 自动加载高亮语言语法的js代码 -->
+	<script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+	
+	<!-- 插件工具栏 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.js"></script>
+	<!-- 插件工具栏复制 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+	<!-- 插件工具栏显示语言 -->
+	<script src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>
+	
+	<!-- 给class='line-numbers'加行号 -->
+	<link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+	<script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 	
     <script>
-        const form = document.getElementById("chat-form");
-        const messageInput = document.getElementById("message");
+		marked.setOptions({
+			// mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
+			mangle: false,
+			// 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
+			headerIds: false
+		});
+
+        const form = document.getElementsByTagName('form')[0];
+        const messageInput = document.querySelector('form input');
         const messages = document.getElementById("messages");
 
         form.addEventListener("submit", (event) => {
             event.preventDefault();
 			
 			const userMessage = document.createElement("div");
-            userMessage.classList.add("border-b", "border-gray-200", "my-4");
-            userMessage.innerHTML = `<p class="text-gray-700 mb-2"><strong>You:</strong> ${messageInput.value}</p>`;
+            userMessage.classList.add("my-4");
+            userMessage.innerHTML = `<p class="mb-2"><strong>You:</strong> ${messageInput.value}</p>`;
             messages.appendChild(userMessage);
             messageInput.value = "";
 
@@ -58,35 +102,31 @@
 
 
 			const aiMessageDiv = document.createElement("div");
-			aiMessageDiv.classList.add("border-b", "border-gray-200", "my-4");
+			aiMessageDiv.classList.add("border-bottom", "border-info", "my-4");
 			
 			const aiMessages = document.createElement("p");
-			aiMessages.classList.add("text-blue-500", "mb-2");
+			aiMessages.classList.add("p-3", "bg-success", "bg-opacity-10", "rounded");
 			
 			aiMessageDiv.appendChild(aiMessages);
 			messages.appendChild(aiMessageDiv);
 			
-			
-			
+	
 			const substitutedUrl = `wss://backend.buildpicoapps.com/ask_ai_streaming?app_id=leg-raise&prompt=${encodeURIComponent(prompt)}`;
             const ws = new WebSocket(substitutedUrl);
 			
 			let eventData = '';
             ws.addEventListener("message", (event) => {
-                console.log(event.data);
+				console.log(event.data);
 				
-				eventData += `${event.data}`;
-                
-				aiMessages.innerHTML = marked(eventData);
+				eventData += event.data;
+				aiMessages.innerHTML = marked.parse(eventData);
+				
+				<!-- 高亮 -->
+				Prism.highlightAll();
             });
 			
 			
             ws.addEventListener("close", (event) => {
-				//aiMessages.innerHTML = marked(aiMessages.innerHTML);
-				// 启用代码高亮
-				document.querySelectorAll('pre code').forEach((block) => {
-					hljs.highlightBlock(block);
-				});
 				
                 console.log("Connection closed", event.code, event.reason);
                 if (event.code != 1000) {
