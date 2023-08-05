@@ -83,8 +83,8 @@ hide:
         });
     }*/
 </script>
-<!-- markdown格式-->
-<script type="text/javascript" src="https://unpkg.com/marked@6.0.0/marked.min.js" onload="loadMarkedScript();"></script>
+<!-- markdown格式
+<script type="text/javascript" src="https://unpkg.com/marked@6.0.0/marked.min.js" onload="loadMarkedScript();"></script>-->
 
 <!-- prism核心库 -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -97,12 +97,12 @@ hide:
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
-<!-- 插件工具栏-->
-<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
+<!-- 插件工具栏
+<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
-<!-- 插件工具栏复制-->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+<!-- 插件工具栏复制
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>-->
 <!-- 插件工具栏显示语言
 <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
@@ -138,6 +138,7 @@ hide:
 			}
 		});
 		// 加载入口模块
+		require.undef('prism-copy-to-clipboard'); // Remove the module from cache
 		require(['prism-copy-to-clipboard', 'prism-show-language', 'marked'], function(clipboard, language, markedjs) {
 			// 在这里使用script3
 			//console.log(script3.message); // 假设script3.js模块导出了一个包含"message"属性的对象
