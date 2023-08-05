@@ -114,7 +114,7 @@ hide:
 				'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
 				'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
 				'prism-show-language': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min',
-				'marked': 'https://unpkg.com/marked@6.0.0/marked.min'
+				'marked': 'https://unpkg.com/marked@6.0.0/marked.min',
 				'prism-line-numbers': 'https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min'
 			},
 			shim: {
