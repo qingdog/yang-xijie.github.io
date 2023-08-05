@@ -12,7 +12,9 @@
             }
             else {
                 // All scripts have been loaded, now initialize require.js
-                return initRequireJs();
+				const req = initRequireJs();
+				console.log(req);
+                return req;
             }
         }
 
