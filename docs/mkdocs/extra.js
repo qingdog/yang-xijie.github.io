@@ -45,6 +45,7 @@
                 }
             });
         }
+		window.require = require;
 
 
 
