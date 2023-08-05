@@ -16,7 +16,8 @@ not_in_nav: |
   /ai/*.md
 exclude:
   - /docs/ai/*.md
-
+docs_dir:
+  docs
 # [UI]
 ## [top]
 theme:
