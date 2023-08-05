@@ -113,7 +113,7 @@ hide:
 	function initRequireJs(){
 		// 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
 		// 这里用于script.onload后再初始化，保证加载js库顺序。以便于在使用xhr即时加载（instant loading），而无需完全重新加载页面。
-		require.config({
+		requirejs.config({
 			paths: {
 				'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
 				'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
@@ -137,8 +137,11 @@ hide:
 				}
 			}
 		});
+		
+		// Remove the module from cache
+		require.undef('toolbar');
+		require.undef('prism-copy-to-clipboard');
 		// 加载入口模块
-		require.undef('prism-copy-to-clipboard'); // Remove the module from cache
 		require(['prism-copy-to-clipboard', 'prism-show-language', 'marked'], function(clipboard, language, markedjs) {
 			// 在这里使用script3
 			//console.log(script3.message); // 假设script3.js模块导出了一个包含"message"属性的对象
