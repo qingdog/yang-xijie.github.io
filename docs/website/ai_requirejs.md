@@ -80,7 +80,7 @@ hide:
     }*/
 </script>
 <!-- markdown格式
-<script type="text/javascript" src="https://unpkg.com/marked@6.0.0/marked.min.js" onload="loadMarkedScript();"></script>-->
+<script type="text/javascript" src="https://unpkg.com/marked@6.0.0/marked.min.js" onload="loadMarkedScript();"></script> -->
 
 <!-- prism核心库 -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -89,16 +89,16 @@ hide:
 <!-- 自动加载高亮语言语法的js代码 -->
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
-<!-- 给class='line-numbers'加行号 -->
+<!-- 给class='line-numbers'加行号
+<script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script> -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
-<script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
 <!-- 插件工具栏
-<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>-->
+<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
 <!-- 插件工具栏复制
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>-->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script> -->
 <!-- 插件工具栏显示语言
 <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
@@ -115,6 +115,7 @@ hide:
 				'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
 				'prism-show-language': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min',
 				'marked': 'https://unpkg.com/marked@6.0.0/marked.min'
+				'prism-line-numbers': 'https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min'
 			},
 			shim: {
 				'toolbar': {
@@ -130,6 +131,9 @@ hide:
 				},
 				'marked': {
 					exports: 'marked'
+				},
+				'prism-line-numbers': {
+					exports: 'prism-line-numbers'
 				}
 			}
 		});
@@ -139,8 +143,10 @@ hide:
 		require.undef('toolbar');
 		require.undef('prism-copy-to-clipboard');
 		require.undef('prism-show-language');
+		require.undef('prism-line-numbers');
 		// 加载入口模块
-		require(['prism-copy-to-clipboard', 'prism-show-language', 'marked'], function(clipboard, language, markedjs) {
+		require(['prism-copy-to-clipboard', 'prism-show-language', 'marked', 'prism-line-numbers'], 
+			function(clipboard, language, markedjs, prism-line-numbers) {
 			// 在这里使用script3
 			//console.log(script3.message); // 假设script3.js模块导出了一个包含"message"属性的对象
 			//script3.someFunction(); // 假设script3.js模块导出了一个名为"someFunction"的函数
