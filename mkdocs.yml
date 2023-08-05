@@ -21,10 +21,6 @@ not_in_nav: | #该选项实际上并不从导航中排除任何内容。
   /ai/*.md
 
 
-exclude_docs: |
-  *.py               # Excludes e.g. docs/hooks/foo.py
-  /drafts            # Excludes e.g. docs/drafts/hello.md
-  /requirements.txt  # Excludes docs/requirements.txt
 
 
 # [UI]
