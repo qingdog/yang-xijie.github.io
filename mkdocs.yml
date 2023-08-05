@@ -6,21 +6,11 @@ site_description: 我的个人网站
 
 # [Navigtion]
 nav:
-#   - 网站:
-#     - WEBSITE/index.md # 访客打开网站第一个看到的是 docs/index.md（会报错 The following pages exist in the docs directory, but are not included in the "nav" configuration: index.md 不要紧）  如果访客之后想要重新看到这个界面  可以在 docs/WEBSITE/index.md 找到
-#     - WEBSITE/build.md
-#     - WEBSITE/help.md
-#     - WEBSITE/test.md
-
-not_in_nav: | #该选项实际上并不从导航中排除任何内容。
-#如果您想在站点中包含一些文档，但故意将它们从导航中排除，通常 MkDocs 会对此发出警告。
-#将此类文件模式（相对于docs_dir）添加到not_in_nav配置中将防止出现此类警告。
-
-#这里配置为了指定md文件不使用旗舰功能：即时加载。
-  /ai/*.md
-exclude:
-  - docs/unwanted.md
-  - docs/archive/*.md
+# - 网站:
+#   - WEBSITE/index.md # 访客打开网站第一个看到的是 docs/index.md（会报错 The following pages exist in the docs directory, but are not included in the "nav" configuration: index.md 不要紧）  如果访客之后想要重新看到这个界面  可以在 docs/WEBSITE/index.md 找到
+#   - WEBSITE/build.md
+#   - WEBSITE/help.md
+#   - WEBSITE/test.md
 
 # [UI]
 ## [top]
@@ -57,7 +47,7 @@ theme:
     #- navigation.tabs.sticky #启用粘性选项卡后，导航选项卡将锁定在标题下方，并在向下滚动时始终保持可见。（如果不使用固定选项卡，可以搭配回到页面顶部再选择选项卡）
     - toc.integrate #启用目录的导航集成后，它始终呈现为左侧导航侧边栏的一部分。
     - toc.follow #启用目录的锚点跟随，侧边栏会自动滚动，以便活动锚点始终可见。
-  
+
     #- navigation.sections #顶级部分将在上面的视口侧边栏中呈现为组。两个功能标志navigation.tabs和navigation.sections可以相互组合。如果两个功能标志均启用，则将为 2 级导航项呈现部分。
 
 
@@ -83,7 +73,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/qingdog #右下角
       name: GitHub | Yang-Xijie
-      
+
   alternate:
     - name: Chinese
       link: /
@@ -95,17 +85,11 @@ extra:
 # [Extensions]
 plugins:
   - search: # 现在还不支持中文搜索 支持之后可以设置语言
-    # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
+      # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
       lang:
         - en
         - ja
-#  - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
-  - tags:
-      tags_allowed:
-        - HTML5
-        - JavaScript
-        - CSS
-
+  - tags # 给单篇文章添加标签 https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/?h=tags
 markdown_extensions:
   - pymdownx.arithmatex: # latex支持
       generic: true
@@ -113,8 +97,8 @@ markdown_extensions:
   - toc:
       permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight: # 代码块高亮
-      # linenums: true # 显示行号
-      # auto_title: true # 显示编程语言名称
+    # linenums: true # 显示行号
+    # auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
   - admonition # https://squidfunk.github.io/mkdocs-material/reference/admonitions/#inline-blocks
