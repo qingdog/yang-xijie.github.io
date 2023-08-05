@@ -1,5 +1,5 @@
-// Ê¹ÓÃÄ£¿é»¯¼ÓÔØÆ÷requirejs¹ÜÀí½Å±¾µÄ¼ÓÔØË³ĞòºÍÒÀÀµ¹ØÏµ¡£
-// ÕâÀïÓÃÓÚÌáÇ°¼ÓÔØjs¿âÒÔ±ãÓÚÔÚÊ¹ÓÃxhr¼´Ê±¼ÓÔØ£¨instant loading£©Ê±ÎŞĞèÍêÈ«ÖØĞÂ¼ÓÔØÒ³Ãæ¡£
+// ä½¿ç”¨æ¨¡å—åŒ–åŠ è½½å™¨requirejsç®¡ç†è„šæœ¬çš„åŠ è½½é¡ºåºå’Œä¾èµ–å…³ç³»ã€‚
+// è¿™é‡Œç”¨äºæå‰åŠ è½½jsåº“ä»¥ä¾¿äºåœ¨ä½¿ç”¨xhrå³æ—¶åŠ è½½ï¼ˆinstant loadingï¼‰æ—¶æ— éœ€å®Œå…¨é‡æ–°åŠ è½½é¡µé¢ã€‚
 function loadScriptsInOrder(scripts, index) {
         index = index || 0;
         if (index < scripts.length) {
@@ -10,32 +10,36 @@ function loadScriptsInOrder(scripts, index) {
             };
             document.head.appendChild(script);
         }
+		
+		initRequire();
     }
     var scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
     //scriptUrls.push("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
 loadScriptsInOrder(scriptUrls);
 
-require.config({
-        paths: {
-            'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
-            'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
-            'prism-show-language': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min',
-            'marked': 'https://unpkg.com/marked@6.0.0/marked.min'
-        },
-        shim: {
-            'toolbar': {
-                exports: 'toolbar'
-            },
-            'prism-copy-to-clipboard': {
-                deps: ['toolbar'],
-                exports: 'prism-copy-to-clipboard'
-            },
-            'prism-show-language': {
-                deps: ['toolbar'],
-                exports: 'prism-show-language'
-            },
-            'marked': {
-                exports: 'marked'
-            }
-        }
-    });
+function initRequire(){
+	require.config({
+			paths: {
+				'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
+				'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
+				'prism-show-language': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min',
+				'marked': 'https://unpkg.com/marked@6.0.0/marked.min'
+			},
+			shim: {
+				'toolbar': {
+					exports: 'toolbar'
+				},
+				'prism-copy-to-clipboard': {
+					deps: ['toolbar'],
+					exports: 'prism-copy-to-clipboard'
+				},
+				'prism-show-language': {
+					deps: ['toolbar'],
+					exports: 'prism-show-language'
+				},
+				'marked': {
+					exports: 'marked'
+				}
+			}
+		});
+}
