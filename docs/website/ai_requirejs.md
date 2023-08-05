@@ -110,26 +110,29 @@ hide:
 
 <!-- <script src="./requirejs@2.3.6_require.js" data-main="./entryModule"></script> -->
 <script>
+	var sum = 0;
 	function initRequireJs(){
 		// 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
 		// 这里用于script.onload后再初始化，保证加载js库顺序。以便于在使用xhr即时加载（instant loading），而无需完全重新加载页面。
+		const toolbar0 = "toolbar" + sum;
+		const toolbar1 = "toolbar";
 		require.config({
 			paths: {
-				'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
+				toolbar0: 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
 				'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
 				'prism-show-language': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min',
 				'marked': 'https://unpkg.com/marked@6.0.0/marked.min'
 			},
 			shim: {
-				'toolbar': {
-					exports: 'toolbar'
+				toolbar0: {
+					exports: toolbar0
 				},
 				'prism-copy-to-clipboard': {
-					deps: ['toolbar'],
+					deps: [toolbar0],
 					exports: 'prism-copy-to-clipboard'
 				},
 				'prism-show-language': {
-					deps: ['toolbar'],
+					deps: [toolbar0],
 					exports: 'prism-show-language'
 				},
 				'marked': {
@@ -150,7 +153,7 @@ hide:
 				headerIds: false
 			});
 
-			console.log(markedjs.parse("**123**"))
+			console.log("use js print " + toolbar0);
 		});
 	}
 
