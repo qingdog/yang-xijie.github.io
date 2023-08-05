@@ -171,6 +171,10 @@ hide:
 		if (my) {
 			my.remove();
 		}
+		var my2  = document.querySelector("head > script[data-requiremodule=prism-copy-to-clipboard]");
+		if (my2) {
+			my2.remove();
+		}
 	
         index = index || 0;
         if (index < scripts.length) {
