@@ -30,8 +30,6 @@ hide:
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
-
-
     <style>
         a {
             color: inherit;
@@ -39,7 +37,6 @@ hide:
         }
     </style>
     <title>ChatGPT App</title>
-
 </head>
 
 
@@ -70,43 +67,35 @@ hide:
         </div>
     </div>
 
-
     <footer class="mt-8" style="float: right;">
         <a href="#" class="text-indigo-700">Made with ❤️</a>
     </footer>
-
 </div>
 
 <script>
-    function loadMarkedScript() {
+    /*function loadMarkedScript() {
         console.log('loadMarkedScript');
-        /*marked.setOptions({
+        marked.setOptions({
             // mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
             mangle: false,
             // 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
             headerIds: false
-        });*/
-    }
+        });
+    }*/
 </script>
 <!-- markdown格式
 <script type="text/javascript" src="https://unpkg.com/marked@6.0.0/marked.min.js" onload="loadMarkedScript();"></script>-->
 
+<!-- prism核心库 -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 <!-- prism高亮 -->
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/themes/prism-tomorrow.min.css">
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-
-
-<!-- <script src="./requirejs@2.3.6_require.js" data-main="./entryModule"></script> -->
-
-<script>
-    
-
-    
-</script>
-
 <!-- 自动加载高亮语言语法的js代码 -->
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+<!-- 给class='line-numbers'加行号 -->
+<link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+<script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
 <!-- 插件工具栏
 <script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>-->
@@ -117,18 +106,13 @@ hide:
 <!-- 插件工具栏显示语言
 <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
-<!-- 给class='line-numbers'加行号 -->
-<link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
-<script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
 
-
-
-
-
+<!-- <script src="./requirejs@2.3.6_require.js" data-main="./entryModule"></script> -->
 <script>
-
 	function initRequireJs(){
+		// 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
+		// 这里用于script.onload后再初始化，保证加载js库顺序。以便于在使用xhr即时加载（instant loading），而无需完全重新加载页面。
 		require.config({
 			paths: {
 				'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
