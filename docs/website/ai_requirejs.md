@@ -100,30 +100,7 @@ hide:
 <!-- <script src="./requirejs@2.3.6_require.js" data-main="./entryModule"></script> -->
 
 <script>
-    require.config({
-        paths: {
-            'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
-            'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
-            'prism-show-language': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min',
-            'marked': 'https://unpkg.com/marked@6.0.0/marked.min'
-        },
-        shim: {
-            'toolbar': {
-                exports: 'toolbar'
-            },
-            'prism-copy-to-clipboard': {
-                deps: ['toolbar'],
-                exports: 'prism-copy-to-clipboard'
-            },
-            'prism-show-language': {
-                deps: ['toolbar'],
-                exports: 'prism-show-language'
-            },
-            'marked': {
-                exports: 'marked'
-            }
-        }
-    });
+    
 
     // 加载入口模块
     require(['prism-copy-to-clipboard', 'prism-show-language', 'marked'], function(clipboard, language, markedjs) {
