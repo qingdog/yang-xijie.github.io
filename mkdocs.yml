@@ -26,7 +26,6 @@ exclude_docs: |
   *.py               # Any file with this extension anywhere.
   !/foo/example.py   # But keep this particular file.
   ai/index.md
-  ai/index.html
 # [UI]
 ## [top]
 theme:
