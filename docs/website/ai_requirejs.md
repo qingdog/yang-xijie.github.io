@@ -103,7 +103,7 @@ hide:
     
 
     // 加载入口模块
-    window.require(['prism-copy-to-clipboard', 'prism-show-language', 'marked'], function(clipboard, language, markedjs) {
+    window.require2(['prism-copy-to-clipboard', 'prism-show-language', 'marked'], function(clipboard, language, markedjs) {
         // 在这里使用script3
         //console.log(script3.message); // 假设script3.js模块导出了一个包含"message"属性的对象
         //script3.someFunction(); // 假设script3.js模块导出了一个名为"someFunction"的函数

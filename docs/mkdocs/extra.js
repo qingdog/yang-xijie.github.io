@@ -19,7 +19,7 @@
         }
 
         var scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
-        window.require = loadScriptsInOrder(scriptUrls);
+        window.require2 = loadScriptsInOrder(scriptUrls);
 
         function initRequireJs() {
             require.config({
