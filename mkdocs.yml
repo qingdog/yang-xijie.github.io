@@ -12,6 +12,9 @@ nav:
 #   - WEBSITE/help.md
 #   - WEBSITE/test.md
 
+not_in_nav: |
+  /ai/*.md
+
 # [UI]
 ## [top]
 theme:
