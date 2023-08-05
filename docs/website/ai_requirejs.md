@@ -64,8 +64,8 @@ hide:
                 </form>
 
             </div>
-        </div>
-    </div>
+		</div>
+	</div>
 
     <footer class="mt-8" style="float: right;">
         <a href="#" class="text-indigo-700">Made with ❤️</a>
@@ -151,7 +151,6 @@ hide:
 			});
 
 			console.log(markedjs.parse("**123**"))
-
 		});
 	}
 
@@ -162,7 +161,9 @@ hide:
             script.src = scripts[index];
             script.onload = function() {
 				if (index == 0) {
-					initRequireJs();
+					setTimeout(function() {
+					  initRequireJs();
+					}, 100); // 毫秒
 				}
                 loadScriptsInOrder(scripts, index + 1);
             };
