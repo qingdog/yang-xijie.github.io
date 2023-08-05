@@ -83,8 +83,8 @@ hide:
         });
     }*/
 </script>
-<!-- markdown格式
-<script type="text/javascript" src="https://unpkg.com/marked@6.0.0/marked.min.js" onload="loadMarkedScript();"></script>-->
+<!-- markdown格式-->
+<script type="text/javascript" src="https://unpkg.com/marked@6.0.0/marked.min.js" onload="loadMarkedScript();"></script>
 
 <!-- prism核心库 -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -97,12 +97,12 @@ hide:
 <link rel="stylesheet" href="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
 <script src="https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
-<!-- 插件工具栏
-<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>-->
+<!-- 插件工具栏-->
+<script defer type="text/javascript" src="https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css">
 
-<!-- 插件工具栏复制
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>-->
+<!-- 插件工具栏复制-->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
 <!-- 插件工具栏显示语言
 <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
@@ -110,19 +110,7 @@ hide:
 
 <!-- <script src="./requirejs@2.3.6_require.js" data-main="./entryModule"></script> -->
 <script>
-	// Function to remove all loaded modules
-	  function removeAllLoadedModules() {
-		for (var moduleName in requirejs.s.contexts._.registry) {
-		  if (requirejs.s.contexts._.registry.hasOwnProperty(moduleName)) {
-			requirejs.undef(moduleName); // Remove the module from cache
-		  }
-		}
-	  }
-	  
 	function initRequireJs(){
-	
-		removeAllLoadedModules();
-		
 		// 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
 		// 这里用于script.onload后再初始化，保证加载js库顺序。以便于在使用xhr即时加载（instant loading），而无需完全重新加载页面。
 		require.config({
@@ -167,19 +155,9 @@ hide:
 	}
 
     function loadScriptsInOrder(scripts, index) {
-		var my  = document.querySelector("head > script[data-requiremodule=toolbar]");
-		if (my) {
-			my.remove();
-		}
-		var my2  = document.querySelector("head > script[data-requiremodule=prism-copy-to-clipboard]");
-		if (my2) {
-			my2.remove();
-		}
-	
         index = index || 0;
         if (index < scripts.length) {
             var script = document.createElement('script');
-			script.id = 'my-script'; // 设置id属性为'my-script'
             script.src = scripts[index];
             script.onload = function() {
 				if (index == 0) {
