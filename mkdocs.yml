@@ -20,9 +20,6 @@ not_in_nav: | #该选项实际上并不从导航中排除任何内容。
 #这里配置为了指定md文件不使用旗舰功能：即时加载。
   /ai/*.md
 
-exclude:
-  - docs/unwanted.md
-  - docs/archive/*.md
 
 exclude_docs: |
   api-config.json    # A file with this name anywhere.
