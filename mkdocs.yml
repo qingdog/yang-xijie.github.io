@@ -16,8 +16,15 @@ not_in_nav: |
   /ai/*.md
 exclude:
   - /docs/ai/*.md
+  - ai/*.md
 docs_dir:
   docs
+exclude_docs: |
+  api-config.json    # A file with this name anywhere.
+  drafts/            # A "drafts" directory anywhere.
+  /requirements.txt  # Top-level "docs/requirements.txt".
+  *.py               # Any file with this extension anywhere.
+  !/foo/example.py   # But keep this particular file.
 # [UI]
 ## [top]
 theme:
