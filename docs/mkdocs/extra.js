@@ -12,7 +12,7 @@
             }
             else {
                 // All scripts have been loaded, now initialize require.js
-                window.require = initRequireJs();
+                return initRequireJs();
             }
         }
 
