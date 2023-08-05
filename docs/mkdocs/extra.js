@@ -12,14 +12,14 @@
             }
             else {
                 // All scripts have been loaded, now initialize require.js
-                initRequireJs();
+                window.require = initRequireJs();
             }
         }
 
         var scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
-        loadScriptsInOrder(scriptUrls);
+        window.require = loadScriptsInOrder(scriptUrls);
 
-        window.require = function initRequireJs() {
+        function initRequireJs() {
             require.config({
                 paths: {
                     'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
