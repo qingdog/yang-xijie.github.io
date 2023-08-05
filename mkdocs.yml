@@ -25,7 +25,11 @@ exclude:
   - docs/archive/*.md
 
 exclude_docs: |
-  openai.md
+  api-config.json    # A file with this name anywhere.
+  drafts/            # A "drafts" directory anywhere.
+  /requirements.txt  # Top-level "docs/requirements.txt".
+  *.py               # Any file with this extension anywhere.
+  !/foo/example.py   # But keep this particular file.
 
 # [UI]
 ## [top]
