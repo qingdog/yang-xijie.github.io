@@ -17,6 +17,7 @@ docs_dir:
   docs
 not_in_nav: |
   /ai/*.md
+  /unwanted.md
   unwanted.md
 exclude:
   - /docs/ai/*.md
