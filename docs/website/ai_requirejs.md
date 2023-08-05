@@ -5,18 +5,6 @@ hide:
 - toc
 
 ---
-<style>
-    .md-typeset pre > code {
-        overflow: initial;
-        padding: 0;
-    }
-</style>
-<style>
-    pre.line-numbers {
-        /*给tomorrow主题加圆角*/
-        border-radius: 0.3em;
-    }
-</style>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +20,17 @@ hide:
 
     <style>
         a {
-            color: inherit;
-            text-decoration: none;
+            color: inherit!important;
+            text-decoration: none!important;
         }
+		.md-typeset pre > code {
+			overflow: initial!important;
+			padding: 0!important;
+		}
+		pre.line-numbers {
+			/*给tomorrow主题加圆角*/
+			border-radius: 0.3em!important;
+		}
     </style>
     <title>ChatGPT App</title>
 </head>
@@ -138,9 +134,11 @@ hide:
 			}
 		});
 		
-		// Remove the module from cache
+		// 允许取消定义模块
+		// 它实际上只在错误情况下有用，即当没有其他模块获得模块值的句柄时，或者作为可能使用该模块的任何未来模块加载的一部分。
 		require.undef('toolbar');
 		require.undef('prism-copy-to-clipboard');
+		require.undef('prism-show-language');
 		// 加载入口模块
 		require(['prism-copy-to-clipboard', 'prism-show-language', 'marked'], function(clipboard, language, markedjs) {
 			// 在这里使用script3
