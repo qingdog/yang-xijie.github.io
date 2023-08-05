@@ -14,6 +14,8 @@ nav:
 
 not_in_nav: |
   /ai/*.md
+exclude:
+  - /docs/ai/*.md
 
 # [UI]
 ## [top]
