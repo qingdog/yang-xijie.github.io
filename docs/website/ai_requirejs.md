@@ -167,9 +167,15 @@ hide:
 	}
 
     function loadScriptsInOrder(scripts, index) {
+		var my  = document.querySelector("head > script[data-requiremodule=toolbar]");
+		if (my) {
+			my.remove();
+		}
+	
         index = index || 0;
         if (index < scripts.length) {
             var script = document.createElement('script');
+			script.id = 'my-script'; // 设置id属性为'my-script'
             script.src = scripts[index];
             script.onload = function() {
 				if (index == 0) {
