@@ -12,7 +12,7 @@
 
 # 网站
 
-[ai]: ./ai/
+[ai]: ./website/ai/
 [buildpicoapps.com/ask_ai_streaming][ai]
 
 
