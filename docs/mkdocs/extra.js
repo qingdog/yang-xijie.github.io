@@ -19,7 +19,7 @@
         var scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
         loadScriptsInOrder(scriptUrls);
 
-        function initRequireJs() {
+        window.require = function initRequireJs() {
             require.config({
                 paths: {
                     'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
@@ -44,8 +44,8 @@
                     }
                 }
             });
+			return require;
         }
-		window.require = require;
 
 
 
