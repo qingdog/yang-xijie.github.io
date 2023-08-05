@@ -25,7 +25,7 @@ exclude:
   - docs/archive/*.md
 
 exclude_docs: |
-  - openai.md
+  openai.md
 
 # [UI]
 ## [top]
