@@ -132,7 +132,7 @@ hide:
 
         // 允许取消定义模块
         // 它实际上只在错误情况下有用，即当没有其他模块获得模块值的句柄时，或者作为可能使用该模块的任何未来模块加载的一部分。
-        requirejs.undef('toolbar');
+        requirejs.undef('prism-toolbar');
         requirejs.undef('prism-copy-to-clipboard');
         requirejs.undef('prism-show-language');
         requirejs.undef('prism-line-numbers');
@@ -255,7 +255,7 @@ hide:
             console.log(event.data);
 
             eventData += event.data;
-            eventData = "```\nvar a = 1;\n```";
+            //eventData = "```\nvar a = 1;\n```";
             aiMessages.innerHTML = marked.parse(eventData);
 
             // Prism.highlightAll(); 高亮全部，无参调用需要code标签的属性指定语言
