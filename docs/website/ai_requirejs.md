@@ -259,9 +259,9 @@ hide:
             //eventData = "```\nvar a = 1;\n```";
             aiMessages.innerHTML = marked.parse(eventData);
 
-            // Prism.highlightAll(); 高亮全部，无参调用需要code标签的属性指定语言
+            //Prism.highlightAll(); //高亮全部，无参调用需要code标签的属性指定语言
             document.querySelectorAll("pre code").forEach(function (codeElement) {
-                Prism.highlightElement(codeElement, true, function () {
+                Prism.highlightElement(codeElement, false, function () {//同步高亮
                 });
             });
         });
