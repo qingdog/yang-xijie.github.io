@@ -136,6 +136,7 @@ hide:
         requirejs.undef('prism-copy-to-clipboard');
         requirejs.undef('prism-show-language');
         requirejs.undef('prism-line-numbers');
+        requirejs.undef('prism-autoloader');
         // 加载入口模块
         requirejs(['marked', 'prism-copy-to-clipboard', 'prism-show-language', 'prism-line-numbers', 'prism-autoloader'],
             function (marked, clipboard, language, numbers, autoloader) {
@@ -261,7 +262,6 @@ hide:
             // Prism.highlightAll(); 高亮全部，无参调用需要code标签的属性指定语言
             document.querySelectorAll("pre code").forEach(function (codeElement) {
                 Prism.highlightElement(codeElement, true, function () {
-                    console.log("Prism.highlightElement")
                 });
             });
         });
