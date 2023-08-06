@@ -177,7 +177,7 @@ hide:
         }
     }
 
-    let scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
+    var scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
     loadScriptsInOrder(scriptUrls);
 
     //var scriptUrls = ['script1.js', 'script2.js', 'script3.js'];
