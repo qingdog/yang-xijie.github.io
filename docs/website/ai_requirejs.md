@@ -5,7 +5,7 @@ hide:
 - toc
 
 ---
-
+ <!-- hide隐藏markdown导航和标题 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,17 +20,20 @@ hide:
 
     <style>
         a {
+			/*不使用链接下划线颜色处理Bootstrap CSS*/
             color: inherit !important;
             text-decoration: none !important;
         }
 
         .md-typeset pre > code {
+			/*兼容行号处理Bootstrap CSS*/
             overflow: initial !important;
             padding: 0 !important;
         }
 
-        pre.line-numbers {
-            /*给tomorrow主题加圆角*/
+        /* 类名为：language-none或language-javascript */
+		pre[class*=language-] {
+            /* 给tomorrow主题高亮后加圆角 */
             border-radius: 0.3em !important;
         }
     </style>
@@ -38,7 +41,7 @@ hide:
 </head>
 
 
-<body style="background-color: rgb(241 245 249);"> <!-- enabled for the whole page -->
+<body style="background-color: rgb(241 245 249);">
 
 <div class="container mt-5 line-numbers">
     <div class="row">
@@ -94,9 +97,30 @@ hide:
 <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
 <script>
-    function initRequireJs() {
-        // 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
-        // 这里用于script.onload后再初始化，保证加载js库顺序。以便于在使用xhr即时加载（instant loading），而无需完全重新加载页面。
+	load();
+
+	// 这里用于script.onload后再初始化requirejs保证加载js库顺序。以便于在使用xhr即时加载（instant loading），而无需完全重新加载页面。
+    function load() {
+        const scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
+        // scriptUrls.push("https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js");
+
+        // (function scriptRecurse(count, callback) { ... })(0);以参数(0, undefined)自执行函数scriptRecurse。
+        // 其中callback为全部加载完成后的回调函数，这里传入函数initRequireJs用于执行requestjs的配置以致于顺序加载js库。
+        (function scriptRecurse(count, callback) {
+            if (count === scriptUrls.length) {
+				// 执行无参回调函数，只会在全部script加载完成后执行一次。																				 
+                callback && callback();
+            } else {
+                //                            这里传入无参函数方便用于递归执行scriptRecurse
+                loadScript(scriptUrls[count], function () {
+                    scriptRecurse(++count, callback);
+                });
+            }
+        })(0, initRequireJs);
+    }
+
+	// 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
+    function initRequireJs() {    
         requirejs.config({
             paths: {
                 'marked': 'https://unpkg.com/marked@6.0.0/marked.min',
@@ -130,14 +154,14 @@ hide:
             }
         });
 
-        // 允许取消定义模块
+        // 允许取消定义模块。这里用于xhr异步加载该页面保证加载js库的顺序以致于重新加载toolbar工具栏再加载其余插件。
         // 它实际上只在错误情况下有用，即当没有其他模块获得模块值的句柄时，或者作为可能使用该模块的任何未来模块加载的一部分。
         requirejs.undef('prism-toolbar');
         requirejs.undef('prism-copy-to-clipboard');
         requirejs.undef('prism-show-language');
         requirejs.undef('prism-line-numbers');
         requirejs.undef('prism-autoloader');
-        // 加载入口模块
+        // 加载入口模块。这里marked脚本库无需重复加载，只要执行setOptions配置一次即可。
         requirejs(['marked', 'prism-copy-to-clipboard', 'prism-show-language', 'prism-line-numbers', 'prism-autoloader'],
             function (marked, clipboard, language, numbers, autoloader) {
                 // 在这里使用script3
@@ -153,26 +177,6 @@ hide:
             });
     }
 
-    function load() {
-        const scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
-        // scriptUrls.push("https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js");
-
-        // (function scriptRecurse(count, callback) { ... })(0);以参数(0, undefined)自执行函数scriptRecurse。
-        // 其中callback为全部加载完成后的回调函数，这里传入函数initRequireJs用于执行requestjs的配置以致于顺序加载js库。
-        (function scriptRecurse(count, callback) {
-            if (count === scriptUrls.length) {
-                callback && callback();
-            } else {
-                //                            这里传入无参函数方便用于递归执行scriptRecurse
-                loadScript(scriptUrls[count], function () {
-                    scriptRecurse(++count, callback);
-                });
-            }
-        })(0, initRequireJs);
-    }
-
-    load();
-
     /**
      * 这里使用js代码引入第三方js库，而不是script标签
      */
@@ -184,7 +188,7 @@ hide:
         script.onload = script.onreadystatechange = function () {
             // 当script加载完成后且不处于准备状态时
             if (!script.readyState || 'loaded' === script.readyState || 'complete' === script.readyState) {
-                // 脚本加载完成后执行函数，先看fn是否存在（不为null或undefined），然后再执行fn函数。
+                // 脚本加载完成后执行函数，先看fn是否存在（不为null或undefined），然后再执行fn无参函数。
                 fn && fn();
             }
         };
@@ -193,35 +197,10 @@ hide:
     }
 </script>
 
-<!-- xhr即时加载默认不会重复引入script库，但是会执行script标签里的js代码
+<!-- xhr即时加载默认不会重复引入script库，但是会执行script标签里的js代码因此不使用src引入
 <script src="https://unpkg.com/requirejs@2.3.6/require.js" onload="initRequireJs()"></script> -->
 
 <script>
-    function loadScriptsInOrder(scripts, index) {
-        index = index || 0;
-        if (index < scripts.length) {
-            const script = document.createElement('script');
-            script.src = scripts[index];
-            script.onload = function () {
-                loadScriptsInOrder(scripts, index + 1);
-            };
-            document.head.appendChild(script);
-        }
-    }
-
-    var scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
-    //loadScriptsInOrder(scriptUrls);
-
-    // 兼容xhr异步加载。不使用script标签，使用js代码按顺序加载cdn
-
-
-    //var scriptUrls = ['script1.js', 'script2.js', 'script3.js'];
-    //var scriptUrls = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
-
-    //scriptUrls.push("https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js");
-    //scriptUrls.push("https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js");
-    //loadScriptsInOrder(scriptUrls);
-
     document.querySelector('form[name=mes]').addEventListener("submit", (event) => {
         event.preventDefault();
 
@@ -256,21 +235,20 @@ hide:
             console.log(event.data);
 
             eventData += event.data;
-            //eventData = "```\nvar a = 1;\n```";
             aiMessages.innerHTML = marked.parse(eventData);
 
-            //Prism.highlightAll(); //高亮全部，无参调用需要code标签的属性指定语言
+            // Prism.highlightAll(); //高亮全部元素，无参调用需要code标签的属性指定语言
             document.querySelectorAll("pre code").forEach(function (codeElement) {
-                Prism.highlightElement(codeElement, false, function () {//同步高亮
+				// 高亮单个元素（元素，这里stream流用同步执行不然会来不及完成高亮导致同时执行错误，回调函数）																														   
+                Prism.highlightElement(codeElement, false, function () {
+					// 高亮包括无语言的code标签，例如字符串：```\nvar a;\n```或者标签：<code>var a;</code>
                 });
             });
         });
-
-
+		
         ws.addEventListener("close", (event) => {
-
             console.log("Connection closed", event.code, event.reason);
-            if (event.code != 1000) {
+            if (event.code !== 1000) {
                 alert("Oops, we ran into an error. Refresh the page and try again.");
             }
         });
