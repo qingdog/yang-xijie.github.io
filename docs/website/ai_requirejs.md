@@ -102,9 +102,6 @@ hide:
 <!-- 插件工具栏显示语言
 <script defer src="https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min.js"></script>-->
 
-
-
-<!-- <script src="./requirejs@2.3.6_require.js" data-main="./entryModule"></script> -->
 <script>
     function initRequireJs(){
         // 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
@@ -161,7 +158,10 @@ hide:
                 console.log('use js print abc')
             });
     }
+</script>
 
+<script src="https://unpkg.com/requirejs@2.3.6/require.js" onload="initRequireJs()"></script>
+<script>
     function loadScriptsInOrder(scripts, index) {
         index = index || 0;
         if (index < scripts.length) {
@@ -178,7 +178,7 @@ hide:
     }
 
     var scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
-    loadScriptsInOrder(scriptUrls);
+    //loadScriptsInOrder(scriptUrls);
 
     //var scriptUrls = ['script1.js', 'script2.js', 'script3.js'];
     //var scriptUrls = ["https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min.js"];
