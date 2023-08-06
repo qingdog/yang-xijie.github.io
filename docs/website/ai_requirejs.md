@@ -23,14 +23,14 @@ hide:
             color: inherit!important;
             text-decoration: none!important;
         }
-		.md-typeset pre > code {
-			overflow: initial!important;
-			padding: 0!important;
-		}
-		pre.line-numbers {
-			/*给tomorrow主题加圆角*/
-			border-radius: 0.3em!important;
-		}
+        .md-typeset pre > code {
+            overflow: initial!important;
+            padding: 0!important;
+        }
+        pre.line-numbers {
+            /*给tomorrow主题加圆角*/
+            border-radius: 0.3em!important;
+        }
     </style>
     <title>ChatGPT App</title>
 </head>
@@ -60,8 +60,8 @@ hide:
                 </form>
 
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 
     <footer class="mt-8" style="float: right;">
         <a href="#" class="text-indigo-700">Made with ❤️</a>
@@ -106,80 +106,78 @@ hide:
 
 <!-- <script src="./requirejs@2.3.6_require.js" data-main="./entryModule"></script> -->
 <script>
-	function initRequireJs(){
-		// 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
-		// 这里用于script.onload后再初始化，保证加载js库顺序。以便于在使用xhr即时加载（instant loading），而无需完全重新加载页面。
-		requirejs.config({
-			paths: {
-				'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
-				'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
-				'prism-show-language': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min',
-				'marked': 'https://unpkg.com/marked@6.0.0/marked.min',
-				'prism-line-numbers': 'https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min'
-			},
-			shim: {
-				'toolbar': {
-					exports: 'toolbar'
-				},
-				'prism-copy-to-clipboard': {
-					deps: ['toolbar'],
-					exports: 'prism-copy-to-clipboard'
-				},
-				'prism-show-language': {
-					deps: ['toolbar'],
-					exports: 'prism-show-language'
-				},
-				'marked': {
-					exports: 'marked'
-				},
-				'prism-line-numbers': {
-					exports: 'prism-line-numbers'
-				}
-			}
-		});
-		
-		// 允许取消定义模块
-		// 它实际上只在错误情况下有用，即当没有其他模块获得模块值的句柄时，或者作为可能使用该模块的任何未来模块加载的一部分。
-		require.undef('toolbar');
-		require.undef('prism-copy-to-clipboard');
-		require.undef('prism-show-language');
-		require.undef('prism-line-numbers');
-		// 加载入口模块
-		require(['prism-copy-to-clipboard', 'prism-show-language', 'marked', 'prism-line-numbers'], 
-			function(clipboard, language, markedjs, numbers) {
-			// 在这里使用script3
-			//console.log(script3.message); // 假设script3.js模块导出了一个包含"message"属性的对象
-			//script3.someFunction(); // 假设script3.js模块导出了一个名为"someFunction"的函数
+    function initRequireJs(){
+        // 使用模块化加载器requirejs管理脚本的加载顺序和依赖关系。
+        // 这里用于script.onload后再初始化，保证加载js库顺序。以便于在使用xhr即时加载（instant loading），而无需完全重新加载页面。
+        requirejs.config({
+            paths: {
+                'toolbar': 'https://unpkg.com/prismjs@1.29.0/plugins/toolbar/prism-toolbar.min',
+                'prism-copy-to-clipboard': 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min',
+                'prism-show-language': 'https://unpkg.com/prismjs@1.29.0/plugins/show-language/prism-show-language.min',
+                'marked': 'https://unpkg.com/marked@6.0.0/marked.min',
+                'prism-line-numbers': 'https://unpkg.com/prismjs@1.29.0/plugins/line-numbers/prism-line-numbers.min'
+            },
+            shim: {
+                'toolbar': {
+                    exports: 'toolbar'
+                },
+                'prism-copy-to-clipboard': {
+                    deps: ['toolbar'],
+                    exports: 'prism-copy-to-clipboard'
+                },
+                'prism-show-language': {
+                    deps: ['toolbar'],
+                    exports: 'prism-show-language'
+                },
+                'marked': {
+                    exports: 'marked'
+                },
+                'prism-line-numbers': {
+                    exports: 'prism-line-numbers'
+                }
+            }
+        });
 
-			markedjs.setOptions({
-				// mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
-				mangle: false,
-				// 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
-				headerIds: false
-			});
+        // 允许取消定义模块
+        // 它实际上只在错误情况下有用，即当没有其他模块获得模块值的句柄时，或者作为可能使用该模块的任何未来模块加载的一部分。
+        require.undef('toolbar');
+        require.undef('prism-copy-to-clipboard');
+        require.undef('prism-show-language');
+        require.undef('prism-line-numbers');
+        // 加载入口模块
+        require(['prism-copy-to-clipboard', 'prism-show-language', 'marked', 'prism-line-numbers'],
+            function(clipboard, language, markedjs, numbers) {
+                // 在这里使用script3
+                //console.log(script3.message); // 假设script3.js模块导出了一个包含"message"属性的对象
+                //script3.someFunction(); // 假设script3.js模块导出了一个名为"someFunction"的函数
 
-			console.log(markedjs.parse("**123**"))
-		});
-	}
+                markedjs.setOptions({
+                    // mangle参数通常用于压缩和混淆HTML输出，但自从版本5.0.0以来一直不推荐使用
+                    mangle: false,
+                    // 用于自定义Markdown标题（headers）的ID生成，但自从版本5.0.0以来一直不推荐使用
+                    headerIds: false
+                });
+
+                console.log('use js print abc')
+            });
+    }
 
     function loadScriptsInOrder(scripts, index) {
         index = index || 0;
         if (index < scripts.length) {
-            var script = document.createElement('script');
+            const script = document.createElement('script');
             script.src = scripts[index];
             script.onload = function() {
-				if (index == 0) {
-					setTimeout(function() {
-					  initRequireJs();
-					}, 100); // 毫秒
-				}
+                if (index === 0) {
+                    initRequireJs();
+                }
                 loadScriptsInOrder(scripts, index + 1);
             };
             document.head.appendChild(script);
         }
     }
-	
-	var scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
+
+    const scriptUrls = ["https://unpkg.com/requirejs@2.3.6/require.js"];
     loadScriptsInOrder(scriptUrls);
 
     //var scriptUrls = ['script1.js', 'script2.js', 'script3.js'];
