@@ -29,7 +29,14 @@
 </div>
 </body>
 <script>
+	load();
 	
+	// 在页面加载完成后执行
+    function load() {
+		document.addEventListener("DOMContentLoaded", function() {
+			translate();
+		});
+	}
 	
     function translate() {
         document.querySelector("input[type=submit]").onclick = function () {
@@ -91,10 +98,7 @@
 	  // 在整个页面及其依赖资源加载完成后的操作
 	});
 	
-	// 在页面加载完成后执行
-    document.addEventListener("DOMContentLoaded", function() {
-		translate();
-    });
+	
 
 </script>
 </html>
