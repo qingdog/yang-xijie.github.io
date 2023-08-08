@@ -29,19 +29,7 @@
 </div>
 </body>
 <script>
-	load();
-	
-	// 在页面加载完成后执行
-    function load() {
-		document.addEventListener("DOMContentLoaded", function() {
-			console.log("DOMContentLoaded...");
-			translate();
-		});
-		document.querySelector("input[type=submit]").addEventListener("load", function() {
-			console.log("load...");
-			translate();
-		});
-	}
+	translate();
 	
     function translate() {
         document.querySelector("input[type=submit]").onclick = function () {
@@ -67,17 +55,18 @@
 				if (xhr.status != 200) {
 					// 处理错误：连接超时 net::ERR_CONNECTION_TIMED_OUT
 					document.getElementsByTagName("textarea")[1].value = "翻译出错！";
-					console.warn(xhr);	
+					console.warn(xhr);
 				}
 				
 				const json = JSON.parse(xhr.responseText);
 				console.log(json);
 				
-				let value = "";
+				document.getElementsByTagName("textarea")[1].value = "";
 				for (let i = 0; i < json.sentences.length; i++) {
-					value += json.sentences[i].trans;
+					const value = json.sentences[i].trans;
+					document.getElementsByTagName("textarea")[1].value += value;
 				}
-				document.getElementsByTagName("textarea")[1].value = value;
+				
             };
 
             // 设置超时时间为 5 秒视为错误停止请求
@@ -90,20 +79,10 @@
             xhr.send();
         }
     }
-
-    /*window.onload = function () {
-    }*/
 	
-	function onLoadPromise() {
-	  return new Promise(function(resolve) {
-		window.addEventListener('load', resolve);
-	  });
-	}
-	onLoadPromise().then(function() {
-	  // 在整个页面及其依赖资源加载完成后的操作
+	// 在页面加载完成后执行
+	document.addEventListener("DOMContentLoaded", function() {
+		console.log("DOMContentLoaded...");
 	});
-	
-	
-
 </script>
 </html>
