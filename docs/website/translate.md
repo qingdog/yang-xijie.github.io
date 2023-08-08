@@ -34,6 +34,11 @@
 	// 在页面加载完成后执行
     function load() {
 		document.addEventListener("DOMContentLoaded", function() {
+			console.log("DOMContentLoaded...");
+			translate();
+		});
+		document.querySelector("input[type=submit]").addEventListener("load", function() {
+			console.log("load...");
 			translate();
 		});
 	}

@@ -29,9 +29,9 @@ $\boldsymbol u$ $\boldsymbol{a}$
         - 3
             - 4
 
-![](../ME/media/頑張ります.png){width="300"}
+![](https://yang-xijie.github.io/ME/media/頑張ります.png){width="300"}
 
-![](../ME/media/頑張ります.png){width="50%"}
+![](https://yang-xijie.github.io/ME/media/頑張ります.png){width="50%"}
 
-![](../ME/media/頑張ります.png){width="40%"}
-![](../ME/media/頑張ります.png){width="40%"}
+![](https://yang-xijie.github.io/ME/media/頑張ります.png){width="40%"}
+![](https://yang-xijie.github.io/ME/media/頑張ります.png){width="40%"}
