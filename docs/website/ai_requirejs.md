@@ -5,7 +5,8 @@ hide:
 - toc
 
 ---
- <!-- hide隐藏markdown导航和标题 -->
+<!-- hide隐藏markdown导航和标题 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +32,7 @@ hide:
             padding: 0 !important;
         }
 
-        /* 类名为：language-none或language-javascript */
+        /* 匹配类名为：language-javascript或language-none */
 		pre[class*=language-] {
             /* 给tomorrow主题高亮后加圆角 */
             border-radius: 0.3em !important;
@@ -43,7 +44,7 @@ hide:
 
 <body style="background-color: rgb(241 245 249);">
 
-<div class="container mt-5 line-numbers">
+<div class="container mt-5">
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <div class="card">
@@ -53,7 +54,7 @@ hide:
                 </div>
 
                 <form name="mes">
-                    <div class="card-body p-4 mb-4" id="messages">
+                    <div class="card-body p-4 mb-4 line-numbers" id="messages">
                         <!-- Chat messages will be displayed here -->
                     </div>
                     <div class="card-footer">
