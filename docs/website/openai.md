@@ -29,85 +29,25 @@
 </div>
 </body>
 <script>
-    function translate() {
-        document.querySelector("input[type=submit]").onclick = function () {
-            let api = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=en-US&dt=t&dt=bd&dj=1&source=icon&tk=294611.294611&q=";
-			api = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=en-US&dt=t&dt=bd&dj=1"
-			const url = new URL(api);
-            url.searchParams.set('q', document.getElementsByTagName("textarea")[0].value);
-
-            const xhr = new XMLHttpRequest();
-			// 请求方式 url链接 异步方式
-            xhr.open('get', url.href, true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-            document.getElementsByTagName("textarea")[1].value = "翻译中。。。";
-
-			// 回调函数：处理异步响应结果
-            xhr.onreadystatechange = function () {
-				// readyState为4表示请求已完成
-                if (xhr.readyState != 4) {
-					return;
-				}
-				// status为200表示成功收到响应
-				if (xhr.status != 200) {
-					// 处理错误：连接超时 net::ERR_CONNECTION_TIMED_OUT
-					document.getElementsByTagName("textarea")[1].value = "翻译出错！";
-					console.warn(xhr);	
-				}
-				
-				const json = JSON.parse(xhr.responseText);
-				console.log(json);
-				
-				let value = "";
-				for (let i = 0; i < json.sentences.length; i++) {
-					value += json.sentences[i].trans;
-				}
-				document.getElementsByTagName("textarea")[1].value = value;
-            };
-
-            // 设置超时时间为 5 秒视为错误停止请求
-            xhr.timeout = 5000;
-            xhr.ontimeout = function () {
-                document.getElementsByTagName("textarea")[1].value = "请求 API 超时！";
-                console.error("请求超过5s！");
-            };
-
-            xhr.send();
-        }
-    }
-
-    /*window.onload = function () {
-    }*/
-	
-	function onLoadPromise() {
-	  return new Promise(function(resolve) {
-		window.addEventListener('load', resolve);
-	  });
-	}
-	onLoadPromise().then(function() {
-	  // 在整个页面及其依赖资源加载完成后的操作
-	});
+	callApi();
 	
 	function callApi() {
-		const input = document.querySelector("input[type=submit]");
-        //translate();
-
-        input.addEventListener('click', (event) => {
+        document.querySelector("input[type=submit]").addEventListener('click', (event) => {
             event.preventDefault();
 
-            let token = "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";
-            let url = "https://api.openai.com/v1/completions";
+			const openai = "https://api.openai.com/v1/chat/completions";
+            let secretKey = "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";
+            
 
-            url = "https://p0.kamiya.dev/api/openai/chat/completions";
-            token = "sk-oD0CmFb0LfS3ASpF58NlNH8luYO34JkAl2iw2nIrNtuscnWQ";
+            const url = "https://p0.kamiya.dev/api/openai/chat/completions";
+            secretKey = "sk-oD0CmFb0LfS3ASpF58NlNH8luYO34JkAl2iw2nIrNtuscnWQ";
 
             callOpenAIWithSSE(url, 'sk-5EzqpaEloq20btdLIlrhDYh50r01kB9cZI6HpPpSUip16sD0', null);
+			
+			//getCost(secretKey);
         });
 	}
-	callApi();
-
-    
+	
     async function callOpenAIWithSSE(url, token, model) {
 		document.getElementsByTagName("textarea")[1].value = "发送中。。。";
 		
@@ -144,7 +84,7 @@
                 },
                 body: JSON.stringify(requestBodyData),
             });
-
+			// 获取响应流进行读取
             const reader = response.body.getReader();
 			
 			const textarea = document.getElementsByTagName("textarea")[1];
@@ -153,6 +93,7 @@
 			const prefix = 'data: ';
 
             while (true) {
+				// 实时读取
                 const {done, value} = await reader.read();
                 if (done) break;
 
@@ -189,7 +130,6 @@
             console.error("Error:", error);
 			alert('请求出错了！');
         }
-		getCost(token);
     }
 	
 	function getCost(secretKey) {
